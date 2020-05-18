@@ -26,10 +26,10 @@
   right-margin = #12
   left-margin = #12
   indent = #0
-  %min-systems-per-page = 9 % this allows you t o squish line spacing
+  min-systems-per-page = 9 % this allows you t o squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . 2 ) (stretchability . 150))
+  system-system-spacing = #'((basic-distance . 14 ) (minimum-distance . 0) (padding . 1 ) (stretchability . 0))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
@@ -88,21 +88,29 @@ chordNames = \chordmode {
   \set chordNameExceptions = #chExceptions
   \set chordChanges = ##t % ##t(true) or ##f(false)
   \set Staff.midiInstrument = #"string ensemble 1"
-  f2. f8:/a bf~bf2 d:m7 c1:sus4 c 
+  f2 f8 a4:m bf8~bf2 d:m7 c1:sus4 c 
   f2 f8 f:/a f:/a bf~bf2 d:m7 c1:sus4 c:sus4 
   f2 f8 f4:/a bf8~bf2 d:m7 c1:sus4 c 
-  f2. f8:/a bf~bf2 d:m7 c1:sus4 c 
-  bf1 g2:m f:/a bf1 g:m7
+  bf1:maj7 g2:m d:m7 c1:sus4 c 
+  bf1 g2:m f:/a bf1 g:m7 ef1:maj7 d:m9 c:m7 c:/e
+
+  %chorus
+  f1 bf2 d:m c1:sus4 c2 c:/e f1 bf d2:m f c:sus4 c
+
+  f2 f8 f:/a f:/a bf~bf2 d:m7 c1:sus4 c:sus4 
+  f2 f8 f4:/a bf8~bf2 d:m7 c1:sus4 c 
+
 }
 melody = \relative c''{
-    \set Staff.midiInstrument = #"piano"
-    %           \set melismaBusyProperties = #'()
-    \time 4/4
-    \key f  \major
-    \clef treble
-    \tempo 4 = 90
-    %\set melismaBusyProperties = #'()
-    %\unset melismaBusyProperties
+  %           \set melismaBusyProperties = #'()
+  \time 4/4
+  \key f  \major
+  \clef treble
+  \tempo 4 = 90
+  \override Score.MetronomeMark.padding = #3
+
+  %\set melismaBusyProperties = #'()
+  %\unset melismaBusyProperties
 	a4 a a c8 d~d a a a c4 a8 g~g2 r2 r1
 	a4 a8 a~a c4 d8~d a4 c8~c a4 g8~g4 r4 g f8 g~g g4 f8 g4 r4
 	a4 a8 a~a c4 d8~d a4 a8 c a4 g8~g4 r4 g8 f8 g4 g a r2
@@ -111,7 +119,11 @@ melody = \relative c''{
 	bf4. a8~a f4 g8~g4 r4 g8 a~a4 bf4. a8~a g4 f8 f4 g4 r2
 	bf4 bf a8 g f f~f g4 f8~f g4. bf4. a8~a f4 g8~g2 r2 
   \bar "||" \break
-  f'4 e8 c~c4 r8 a f'8 e4 c8~c4 a8 d~d2 r2 r1
+  \bar ".|:" f'4 e8 c~c4 r8 a f'8 e4 c8~c4 a8 c~c2 r2 r1 \break
+  f4 e8 c~c4 a8 f'8~f e8 r4 a,4 bf c8 c c c c bf a g~g2 r2 \bar ":|."
+  \break
+  a4 r8 a~a c~c d~d a a4 c8 a~a g~g2 g8 f~f g~g a~a4 r2 
+  a4 a8 a~a4 r4 d4. d8~d a~a a~a g~g4 r4 f8 g~g4 r2.
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
@@ -127,9 +139,10 @@ verseone = \lyricmode {
 
   He it is, who com -- ing af -- ter me 
   is pre -- ferred be -- fore me, whose shoe bu -- ckle
-%	I am not wor -- thy to un -- loose.
+ I'm un -- wor -- thy to loose.
 
-%	These things were done in Beth -- a -- ba -- ra beyond Jor -- dan, where John was bap -- ti -- zing.
+	These things were done in Beth -- a -- ba -- ra be -- yond Jor -- dan, 
+  This is where John was bap -- ti -- zing, and said,
 }
 versetwo = \lyricmode {
     \override LyricText #'font-size = \LyricFontSize
@@ -156,7 +169,7 @@ verseeight = \lyricmode {
 }
 \score {
 	<<
-		\new ChordNames  \with {midiInstrument = #"piano"} {
+		\new ChordNames  \with {} {
 			\chordNames
 		}
 		\new Staff
