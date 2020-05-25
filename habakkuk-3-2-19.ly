@@ -16,7 +16,7 @@
   subtitle = "New International Version"
   composer = "Jason Silver"
   poet = ""
-  copyright = "Silver Ink. 2019"
+  copyright = "Silver Ink. 2019, 2020"
   tagline = "Permission granted to share with attribution."
 }
 \paper {
@@ -28,7 +28,7 @@
 % min-systems-per-page = 8 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 12 ) (minimum-distance . 0) (padding . 1 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 14 ) (minimum-distance . 0) (padding . 5 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
