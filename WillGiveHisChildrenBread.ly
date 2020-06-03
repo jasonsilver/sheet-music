@@ -25,10 +25,10 @@
   right-margin = #12
   left-margin = #12
   indent = #0
- %min-systems-per-page = 8 % this allows you to squish line spacing
+  min-systems-per-page = 7 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 14 ) (minimum-distance . 0) (padding . 2.5246 ) (stretchability . 4 ))
+  system-system-spacing = #'((basic-distance . 10 ) (minimum-distance . 0) (padding . 2.5246 ) (stretchability . 4 ))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
