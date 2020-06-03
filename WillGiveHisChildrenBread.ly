@@ -28,7 +28,7 @@
  %min-systems-per-page = 8 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 14 ) (minimum-distance . 0) (padding . 0 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 14 ) (minimum-distance . 0) (padding . 2.5246 ) (stretchability . 4 ))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
@@ -96,57 +96,57 @@ Segno = {
   \mark \markup { \small \musicglyph #"scripts.segno" }
 }
 chExceptionMusic = {
-  <c d e g>1-\markup { "2" } % notate as 1.2.3.5 
-  <c f g>1-\markup {"sus"}
-  <c a d g>1-\markup { "m2" } % 1.6.2.
-  <c e g d'>1-\markup { \super "add9" } % 1.3.5.9
-  <c ef g d'>1-\markup { "m" \super "add9" } % 1.3.5.9
+  <cs ds es gs>1-\markup { "2" } % notate as 1.2.3.5 
+  <cs fs gs>1-\markup {"sus"}
+  <cs as ds gs>1-\markup { "m2" } % 1.6.2.
+  <cs es gs ds'>1-\markup { \super "add9" } % 1.3.5.9
+  <cs e gs ds'>1-\markup { "m" \super "add9" } % 1.3.5.9
 }
 chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #t) ignatzekExceptions)
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-  \skip2. g4.:m7 f bf:/d ef c:m7 bf f:sus4 f 
-  g:m7 f bf:/d ef c:m7 bf f:sus4 f 
-  c:m7 bf:/d f:sus4 f c:m7 bf:/d f:sus4 f
-  g:m7 f bf:/d ef c:m7 bf f:sus4 f 
+  \skip2. a4.:m7 g c:/e f d:m7 c g:sus4 g 
+  a:m7 g c:/e f d:m7 c g:sus4 g 
+  d:m7 c:/e g:sus4 g d:m7 c:/e g:sus4 g
+  a:m7 g c:/e f d:m7 c g:sus4 g 
   % instrumental
-  g4.:m7 f bf:/d ef c:m7 bf f:sus4 f
+  a4.:m7 g c:/e f d:m7 c g:sus4 g
 
-  f:sus4 f
+  g:sus4 g
 
-  bf d:m7 ef2.:6 bf4. d:m7 ef4. c:m7 bf4. d:m7 ef2.:6 bf4. d:m7 ef:6 f
-  g4.:m7 f bf:/d ef c:m7 bf f:sus4 f 
-  g:m7 f bf:/d ef c:m7 f:/a bf2.
+  c e:m7 f2.:6 c4. e:m7 f4. d:m7 c4. e:m7 f2.:6 c4. e:m7 f:6 g
+  a4.:m7 g c:/e f d:m7 c g:sus4 g 
+  a:m7 g c:/e f d:m7 g:/b c2.
   \bar "||"
 }
 melody = \relative c''{
 	\set Staff.midiInstrument = #"piano"
 	%           \set melismaBusyProperties = #'()
 	\time 6/8
-	\key g  \minor
+	\key a  \minor
 	\clef treble
 	\tempo 4 = 70
   
-	r4. r4 a8 \bar ".|:"
+	r4. r4 b8 \bar ".|:"
   \repeat volta 2 { 
-    bf4 c8 a4 f8 | f4. g4 r16 f | ef4 f8 d4 bf8 | c4. r4 a'8
-    bf4 c8 a4 f8 | f4. g4 r16 f | ef4 f8 f4 bf,8 | c4. r4 d8 |
-    ef4 g8 f4 d8 d (c bf)  c4 d8 ef4 g8 | f4 d8 c4. r8 g'8 a |
-    bf4 c8 a8 g f | f4. g4 r16 f | ef4 f8 d4 bf8 
+    c4 d8 b4 g8 | g4. a4 r16 g | f4 g8 e4 c8 | d4. r4 b'8
+    c4 d8 b4 g8 | g4. a4 r16 g | f4 g8 g4 c,8 | d4. r4 e8 |
+    f4 a8 g4 e8 e (d c)  d4 e8 f4 a8  g4 e8 d4. r8 a'8 b |
+    c4 d8 b8 a g | g4. a4 r16 g | f4 g8 e4 c8 
   }
   \alternative{
-    { c4. r4 \tiny a'8
-      bf4 c8 a4 f8 | f4. g4 r16 f | ef4 f8 d4 bf8 | c4. r4 \normalsize a'8
+    { d4. r4 \tiny b'8
+      c4 d8 b4 g8 | g4. a4 r16 g | f4 g8 e4 c8 | d4. r4 \normalsize b'8
     }
     {
-      \break c,4. r8 d c \bar "||" 
+      \break d,4. r8 e d \bar "||" 
     }
   }
-  bf4. f'4 d8 c4. bf4 c8 | bf4 bf8 f'4 d8 bf4. r4 c8 | bf4 bf8 f'4 d8 c4. bf4 c8 bf4 bf8 f'4 d8 bf4. r4 a'8 |
-  bf4 c8 a4 f8 | f4. g4 r16 f | ef4 f8 d4 bf8 | c4. r8 g' a8
-   bf4 c8 a8 ( g ) f | f4. g4 r16 f | ef4 d8 c4 a8 | bf4. r4.
+  c4. g'4 e8 d4. c4 d8 | c4 c8 g'4 e8 c4. r4 d8 | c4 c8 g'4 e8 d4. c4 d8 c4 c8 g'4 e8 c4. r4 b'8 |
+  c4 d8 b4 g8 | g4. a4 r16 g | f4 g8 e4 c8 | d4. r8 a' b8
+   c4 d8 b8 ( a ) g | g4. a4 r16 g | f4 e8 d4 b8 | c4. r4.
   %\bar "|."
 }
 nothing = \lyricmode {}
@@ -224,7 +224,7 @@ verseeight = \lyricmode {
 		\new Staff
 		<<
 			\new Voice = "one" {
-				\transpose g af \melody
+				\melody
 			}
 			\addlyrics {
 				\verseone
