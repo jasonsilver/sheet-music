@@ -12,8 +12,8 @@
 '())))))))))
 
 \header {
-  title = "Colossians 3:1-4"
-  subtitle = "English Standard Version"
+  title = "Romans 8:9-11"
+  subtitle = "American Standard Version"
   composer = "Jason Silver"
   poet = ""
   copyright = "Silver Ink. 2020"
@@ -107,64 +107,55 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-  a2:m7 g:/b c d a2:m7 g:/b c d
-  e2:m d c g:/b a1:m7 d
-  e2:m d c g:/b a1:m7 d 
-  a2:m7 g:/b c d a2:m7 g:/b c d
-
-  g g:/fs e:m7 g:/d c:maj7 g:/b a:m7 d:sus4
-  g g:/fs e:m7 g:/d c:maj7 g:/b a:m7 d:sus4
+  a2:m a:m/e a:m a:m/e d:m7 d:m7/a d:m7 d:m7/a 
+  f:maj7 f:maj7/c f:maj7 f:maj7/c  e:7 e:7/b e:7 e:7/b
+  a2:m a:m/e a:m a:m/e d:m7 d:m7/a d:m7 d:m7/a 
+  f:maj7 f:maj7/c f:maj7 f:maj7/c  e:7 e:7/b e:7 e:7/b
+  
+  c1 c f f a:m7 c e e:7
 }
-melody = \relative c{
+melody = \relative c'{
   \set Staff.midiInstrument = #"piano"
   %           \set melismaBusyProperties = #'()
   \time 4/4
-	\key g  \major
+	\key a  \minor
 	\clef treble
-	\tempo 4 = 100
-  \tiny
-  c'''4 b8 g~g4 d8 c~|c4 g'8 a~a2 | c4 b8 g~g4 d8 c~|c4 g'8 a~a8
-  \normalsize
-   b,,4 d8~ \bar ".|:" d b4 e8~e b4 d8~d b4 e8~e4 r4 g g8 g~g fs fs e16 fs~|fs2  
-   r8 b,4 d8~d b4 e8~e b4 d8~d b4 e8~e b4 \tiny g'8 \normalsize g4 g8 g~g fs4 e8|fs2 r2 |
-   \bar "||"
-   c'4 b8 g~g4 d8 c~|c4 g'8 a~a2 | c4 b8 g~g4 d8 c~|c4 g'8 a~a8. d,16 g a8.
-   \bar "||" \break
-   b2 r4 g8 a b4 r8 d, g8 a b b~b2 g4. a8~a4 r4 r8 d,8 g16 a8.
-   b2 r4 g8 a b4 r8 d, g8 a b b~b2 g4. a8~a4 r4 
-   r8 b,4 d8
-    \bar ":|."
+	\tempo 4 = 100 \override Score.MetronomeMark.padding = #3
+  r4 e d r8 c e d c b~b4 r r2 r8 a a b b c~c4 r2 | 
+  r8 c e4 d c8 d e d c b~b4 r4 | r2 r8 f' f d e2 r2   \break
+
+  r4 e d r8 c e d c b~b4 r | r2 r8 a a b b c4 d8 c4 r  |
+  r4 e8 \tiny e \normalsize d \tiny d  r c \normalsize | f2 d | e1 | r4 r e e \bar "||" \break
+  
+  a2 g4 e g4. c,8 c d e f~f4. g8 f4 e f4 r e e | a2 g4 e | g4. c,8 c d e f e2. r4 | r1
+  \bar ":|."
+
+
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
-_ _ _ _ _ _ _ _ _ _ _ _ _ _
   \override LyricText #'font-size = \LyricFontSize
   \set stanza = "1."
-  If then you have been raised with Christ, 
-  seek the things that are a -- bove, 
-  where Christ is, sea -- ted at the right hand
-  _ At the right hand of God. 
+  But ye are not in the flesh but in the Spi -- rit, 
+  if so be that the Spi -- rit of God dwel -- leth in you. 
 
-  Set your minds on things a -- bove, 
-  not on things that are on earth. 
+  But if, but if an -- y man hath not the Spir -- it of Christ, 
+  he __ _ is __ _ _ none of his. 
 
-  For you have died, 
-  and your life 
-  is hid -- den with Christ in God. 
-  For you have died, 
-  and your life 
-  is hid -- den with Christ in God. 
-
-  When Christ
+  And if Christ is in you, 
+  the bo -- dy is dead be -- cause of sin; 
+  but the spir -- it is life be -- cause of righ -- teous -- ness. 
 }
 versetwo = \lyricmode {
-_ _ _ _ _ _ _ _ _ _ _ _ _ _
 	\override LyricText #'font-size = \LyricFontSize
-  _ _ \set stanza = "2."
-  who is your life ap -- pears, then you 
-  al -- so will ap -- pear;
-  Then you al -- so will ap -- pear with him– 
-  ap -- pear with Him in glo -- ry.
+  \set stanza = "2."
+  But if the Spir -- it of him that raised up Je -- sus from the
+    dead _ _ dwel -- leth in you, dwel -- leth in you, 
+    he that raised %up Christ Je -- sus 
+      Christ from the dead shall give
+    life %al -- so to your mor -- tal 
+      to your bo -- dies through his Spir -- it 
+    that dwells in you.
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
