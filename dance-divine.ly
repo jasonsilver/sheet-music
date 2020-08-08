@@ -12,12 +12,12 @@
 '())))))))))
 
 \header {
-  title = "Jonah 2:1b-9"
-  subtitle = "New International Version"
+  title = "Dance Divine"
+  subtitle = ""
   composer = "Jason Silver"
   poet = ""
   copyright = "Silver Ink. 2020"
-  tagline = "Permission granted to share with attribution."
+  tagline = "Copyright 2020."
 }
 \paper {
   top-margin = #10
@@ -107,90 +107,72 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-  c2:m7 ef:/g af:1.3.5.9 ef4 bf:/d  c2:m7 g:m7 af:1.3.5.9 ef4 bf:/d c2:m7 ef:/g af1
-
-  ef2 bf:/d c:m af:6 ef bf:/d c:m g:m7 af1
-
-  c2:m7 ef:/g af:1.3.5.9 ef4 bf:/d  c2:m7 g:m7 af:1.3.5.9 ef4 bf:/d  
-  c2:m7 ef:/g af:1.3.5.9 ef4 bf:/d  c2:m7 ef:/g af1:1.3.5.9
-
-  f2:m ef:/g a1:1.3.5.9 f2:m ef:/g bf4:1.5 bf:sus4 bf2 f:m ef:/g bf1
-
-  c2:m7 ef:/g af:1.3.5.9 ef4 bf:/d  c2:m7 g:m7 af:1.3.5.9 ef4 bf:/d  
-  c2:m7 ef:/g af:1.3.5.9 ef4 bf:/d  af2:/c bf  af:/ef ef
- 
+  c2 d:m f1:maj7 c2 d:m f:maj7 g c d:m f:maj7 g a:m f:1.2.3.5   
+  c2 d:m f1:maj7 c2 d:m f:maj7 g c d:m f:maj7 g a:m f:1.2.3.5 
 }
 melody = \relative c'{
   \set Staff.midiInstrument = #"trumpet"
   % \set melismaBusyProperties = #'()
   \time 4/4
-	\key ef  \major
+  \key c  \major
 	\clef treble
-	\tempo 4 = 65
+	\tempo 4 = 98
   \override Score.MetronomeMark.padding = #3
-  \bar ".|:"
-  r8 ef'16 ef~ef8 d16 d~d8 c16 c~c8 bf16 af bf4 r8 g16 af bf8 g f (ef)
+  r4 e8 f~f4 f8 e~e2 r2 r4 e8 f~f4 f8 e~e4 e8 d~d4 r4 
+  r4 e8 f~f4 f8 e~e4 e8 d~d c d e~e c4 g8~g2 
+  \bar ".|:-||" \break
+  \repeat volta 2 {  
+  r4 e'8 f~f4 f8 e~e2 r2 r4 e8 f~f4 f8 e~e4 e8 d~d4 r4 
+  r4 e8 f~f4 f8 e~e4 e8 d~d c d e~e c4 g8~g2 
+  r2 r8 c'8 b  a8~
+  \bar "||"  \break
+  a8 g4 g8~g e4 e8 d d~d4 r8 c'8 b a8~a g4 g8~g e4 g8~g2 r8 c8 b a8~
+  a8 g4 g8~g e4 e8 d d~d4 r8 c d e~e c~c g~g4 r4 |
+  }
+  \alternative{
+    {
+     r1
+    }
+    {
+      r2 r8 c' b a~
+    }
+  }
+  a g4 g8~g e4 e8 d d~d4 r8 c'8 b a8~a g4 g8~g e4 g8~g2 r8 c8 b a8~
+  a8 g4 g8~g e4 e8 d d~d4 r8 c d e~e c~c g~g4 r4 | r1 |
   
-  r8 ef'16 ef~ef8 d16 d d8 c16 c c8 bf16 bf~bf8 g16 f~f8 ef16 bf' bf g8. f8 ef16 ef~ef4
-  r2. r1
-  \bar ":|." \break
-  ef4 ef ef8 f g bf g4 r4 f ef8 ef~ef ef ef4 ef8 f g bf~bf g16 f~f8 ef8 bf' g f8 ef~ef4 r2.
-  \bar "||"
-  r8 ef'16 ef~ef8 d16 d~d8 c16 c~c8 bf16 af bf4 r8 g16 af bf8 g f ef
-  
-  r8 ef'16 ef~ef8 d16 d~d8 c16 c~c8 bf16 bf~bf4 r2. |
-  r8 ef16 ef ef8 d16 d d8 c16 c~c8 bf16 bf~bf4 r8 g16 af bf8 g f ef | 
-    r8 ef16 ef~ef8 bf'16 bf~bf8 g f ef16 bf'16 bf g8. f8 ef16 ef~ef4 r4 
-  \bar "||"
-  r1 r2. f8 g af4 r8 af g f ef f~f4 r4. f16 g f ef ef c~c4 af'8 af g f ef f~f4 f8 ef f g f ef
-  \bar "||"
-  r8 ef'16 ef ef8 d16 d~d8 c16 c~c bf bf af bf4 r8 g16 af bf8 g f (ef)
-  r8 ef'16 ef~ef8 d16 d~d8 c16 c~c8 bf16 (af) bf4 r8 g16 (af) bf8 g f ef
-  ef8 ef'16 ef~ef8 d16 d~d8 c16 c~c8 bf16 (af) bf4 r8 g16 af bf8 g f ef
-c2 d4. ef8 ef2. r4 \bar "|."
-
 }
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
   \set stanza = "1."
-  In my dis -- tress I called to the Lord,
-  and he an -- swered me.
-  From deep in the realm of the dead I called for help,
-  and you list -- ened to my cry.
+  I close my eyes
+  And see your lov -- ing smile
+  Be -- fore the mem -- 'ry fades
+  Or the mo -- ment dies
+
+  My hands I fold
+  Take in my breath and hold
+  A fro -- zen point in time
+  You em -- brace my soul
+
+  From the per -- son who I used to be
+  To the one I will be -- come
+  It's your love that makes the best in me
+  You're the ri -- sing Son
+
+  When I fall you lift me up a -- gain
+  Lo -- ving eyes that un -- der -- stand
+  Though I'm sel -- dom who I want to be
+  You still take my hand
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-  \set stanza = "2."
-  You hur -- led me in -- to the __ _ depths,
-  to the heart of the_seas,
-  the cur -- rents swirled _ a -- bout me;
-  your waves and break -- ers _
-  swept __ _ ov -- er me.
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  \set stanza = "3."
+  A dance di -- vine
+  A step, a turn in time
+  We move in hope and love
+  A for -- got -- ten rhyme
 
-  I said, ‘I have been ba -- nished from your sight;
-  yet I will look ag -- ain to -- ward your ho -- ly tem -- ple.’
-
-   En -- gulfi -- ng wa -- ters threat -- ened __ _ me,
-  and the deep sur -- round -- ed;
-  sea -- weed was wrapped a -- round my head.
- 
-  To the roots of the moun -- tains I sank down;
-  and the earth barred me in.
-  But you, O Lord my God,
-  brought my life up from the pit.
-
-  “When my life was eb -- bing a -- way,
-  I re -- mem -- bered you, Lord,
-  and my prayer rose to you,
-  to your ho -- ly tem -- ple.
-
-  “Those who cling to worth -- less i -- dols
-  turn a -- way from God’s love for them.
-
-  But I, with shouts of grate -- ful praise,
-  will sa -- cri -- fice to you.
-  What I have vowed I will make good.
-  I will say, ‘Sal -- va -- tion comes from the Lord.’
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
