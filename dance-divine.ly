@@ -17,7 +17,7 @@
   composer = "Jason Silver"
   poet = ""
   copyright = "Silver Ink. 2020"
-  tagline = "Copyright 2020."
+  tagline = ""
 }
 \paper {
   top-margin = #10
@@ -108,7 +108,14 @@ chordNames = \chordmode {
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
   c2 d:m f1:maj7 c2 d:m f:maj7 g c d:m f:maj7 g a:m f:1.2.3.5   
-  c2 d:m f1:maj7 c2 d:m f:maj7 g c d:m f:maj7 g a:m f:1.2.3.5 
+  c2 d:m f1:maj7 c2 d:m f:maj7 g c d:m f:maj7 g a:m f:1.2.3.5 g1:sus4
+
+  f2 c:/e g c:/e f c g:sus4 g 
+  f2 c:/e g:/b c f1:maj7 g2:sus4 g 
+  g2:sus4 g 
+  f2 c:/e g c:/e f c g:sus4 g 
+  f2 c:/e g:/b c f1:maj7 g2:sus4 g 
+  
 }
 melody = \relative c'{
   \set Staff.midiInstrument = #"trumpet"
@@ -138,8 +145,11 @@ melody = \relative c'{
     }
   }
   a g4 g8~g e4 e8 d d~d4 r8 c'8 b a8~a g4 g8~g e4 g8~g2 r8 c8 b a8~
-  a8 g4 g8~g e4 e8 d d~d4 r8 c d e~e c~c g~g4 r4 | r1 |
+  a8 g4 g8~g e4 e8 d d~d4 r8 c c d e c~c g~g4 r4 | r1 |
   
+    r4 f'8 e~e d4 f8~f e4 d8~d c~c4
+  r4 f8 e~e c4 f8~f e4 d8~d4 r4
+  r4 f8 e~e d4 f8~f e~e d~d c c d e c4 g8~g4
 }
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
@@ -162,7 +172,13 @@ verseone = \lyricmode {
   When I fall you lift me up a -- gain
   Lo -- ving eyes that un -- der -- stand
   Though I'm sel -- dom who I want to be
-  You still take my hand
+  You lead me by the hand
+
+  You're faith -- ful, lov -- ing, kind and
+  We waltz this step through life
+  I fol -- low as you lead me
+  On the dance di -- vine
+  
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
