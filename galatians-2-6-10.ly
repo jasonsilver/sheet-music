@@ -28,7 +28,7 @@
  	%min-systems-per-page = 11 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 14 ) (minimum-distance . 0) (padding . 0 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . -.59 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
@@ -107,8 +107,11 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-
-
+  e1:m7 a:sus4 fs:m7 g:maj7 e:m7 a:sus4 fs:m7 b:m7
+  e1:m7 a:sus4 fs:m7 g:maj7 e:m7 a:sus4 fs:m7 b:m7
+  e1:m7 a:sus4 fs:m7 g:maj7 e:m7 a:sus4 fs:m7 b:m7
+  e1:m7 a:sus4 fs:m7 g:maj7 
+  e:m7 a:sus4 d b:m7 e:m7 a:sus4 d b:m7 e:m7 a:sus4 fs:m7 b:m7
 }
 melody = \relative c''{
   \set Staff.midiInstrument = #"piano"
@@ -118,30 +121,30 @@ melody = \relative c''{
 	\clef treble
 	\tempo 4 = 100
   \override Score.MetronomeMark.padding = #3
-  g2 g8 e fs g~g4 r2. fs4 fs8 fs~fs4 d8 e~e fs~fs4 r2 
-  g4 a g r4 g4 a g e8 fs~fs2. r4 r2. r8 fs8
+  g2 g8 e fs g~g4 r2 r8 \tiny e8 \normalsize fs4 fs8 fs~fs4 d8 e~e fs~fs4 r2 
+  g4 a g r8 \tiny e8 \normalsize g4 a g e8 fs~fs2. r4 r2. r8 fs8
   g4 g g8 e fs g~g4 r2. fs4 fs8 fs~fs4 d8 e~e fs4 g8 fs4 r 
   g4 a g r4 g4 a g e8 fs~fs2. r4 r1
   \bar "||" \break
   g2 g8 e fs g~g4 r2 r8 e fs4 fs8 fs~fs d e fs~fs4 r2.
-  g8 g a g~g e~e4 g8 g a g~g e~e4 e8 fs~fs2 r4 r1 
+  g8 g a g~g e~e8 \small fs \normalsize g8 g a g~g e~e4 e8 fs~fs2 r4 r1
   g4 a4 g8 e e fs g4 g4 g8 fs e fs~fs2 r2 r1 
   \bar "||" \break
   b4 b b8 b4 b8 b a a a~a e e fs 
   g fs4 fs8~fs4 r8 fs g fs4 e8~e d d d  
   b'4 b  b8 b4 b8 b a a a~a e e fs g fs4 fs8~fs4 r
-  g fs8 e~e d4 b8~b2 r2  r1 | r1 | r1 |
+  g fs8 e~e d4 b8~b2. r4 | r1 | r1 | r1 |
   \bar "||" \break
-  
+
 
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
-
+  \set stanza = "1."
   Those lead -- ers who seemed 
-  seemed to be im -- por -- tant 
-  did not change the Good News I preach. 
+  _ seemed to be im -- por -- tant 
+  did not change _ the Good News I preach. 
 
   (It does not mat -- ter to me 
   if they are “im -- por -- tant” or not. 
@@ -151,7 +154,7 @@ verseone = \lyricmode {
   I'd been gi -- ven the work
   tell -- ing the Good News 
   to those who are not Jew -- ish, 
-  just as Pet -- er had the work of tell -- ing the Jews. 
+  _ just as Pet -- er had the work of tell -- ing the Jews. 
 
   God gave Pet -- er the po -- wer to work 
   as an a -- pos -- tle for 
@@ -160,26 +163,24 @@ verseone = \lyricmode {
   as an a -- pos -- tle for 
   those who are not Jews. 
 
-  James, Pe -- ter, and John, 
-  who seemed to be the lead -- ers, 
-  un -- der -- stood that God 
-  had gi -- ven me this spe -- cial grace, 
-  so they ac -- cept -- ed Bar -- na -- bas and me. 
-
-  They agreed that they would 
-  go to the Jewish people 
-  and that we should 
-  go to those who're not Jewish. 
-
-  The only thing they asked us 
-  was to remember to help the poor—
-  something I really wanted to do.
-
+  
 }
 versetwo = \lyricmode {
-_ _ _ _ _ _ _ _ _ _ _ _ _ _
 	\override LyricText #'font-size = \LyricFontSize
-  _ _ \set stanza = "2."
+  \set stanza = "3."
+  James, Pe -- ter, and John, 
+  who seemed to be  the lead -- ers, 
+  un -- der -- stood God  gave me spe -- cial grace,_
+  so they ac -- cept -- ed us both
+  Bar -- na -- bas and me. _ _ _
+  They a -- greed they'd go to the Jews
+  and that we should 
+  go to those who are not Jew -- ish. 
+
+  They on -- ly asked us: 
+  re -- mem -- ber to help the poor—  _
+  _ That is some -- thing that I real -- ly want -- ed to do.
+
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
