@@ -12,7 +12,7 @@
 '())))))))))
 
 \header {
-  title = "Galatians 2:6-10"
+  title = "Galatians 2:11-14"
   subtitle = "New Century Version"
   composer = "Jason Silver"
   poet = ""
@@ -28,7 +28,7 @@
  	%min-systems-per-page = 11 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . -.59 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 12 ) (minimum-distance . 0) (padding . -.59 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
@@ -107,80 +107,66 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-  e1:m7 a:sus4 fs:m7 g:maj7 e:m7 a:sus4 fs:m7 b:m7
-  e1:m7 a:sus4 fs:m7 g:maj7 e:m7 a:sus4 fs:m7 b:m7
-  e1:m7 a:sus4 fs:m7 g:maj7 e:m7 a:sus4 fs:m7 b:m7
-  e1:m7 a:sus4 fs:m7 g:maj7 
-  e:m7 a:sus4 d b:m7 e:m7 a:sus4 d b:m7 e:m7 a:sus4 fs:m7 b:m7
+  
 }
-melody = \relative c''{
-  \set Staff.midiInstrument = #"piano"
+melody = \relative c'{
+  \set Staff.midiInstrument = #"acoustic grand"
   %           \set melismaBusyProperties = #'()
-  \time 4/4
+  \time 3/4
 	\key d  \major
 	\clef treble
 	\tempo 4 = 100
   \override Score.MetronomeMark.padding = #3
-  g2 g8 e fs g~g4 r2 r8 \tiny e8 \normalsize fs4 fs8 fs~fs4 d8 e~e fs~fs4 r2 
-  g4 a g r8 \tiny e8 \normalsize g4 a g e8 fs~fs2. r4 r2. r8 fs8
-  g4 g g8 e fs g~g4 r2. fs4 fs8 fs~fs4 d8 e~e fs4 g8 fs4 r 
-  g4 a g r4 g4 a g e8 fs~fs2. r4 r1
+  \skip2 r8 a8 | fs' g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d d8 b a2 r4 r2.
+  fs'8 g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d8 d d b a2 r4 r2 r8 d
   \bar "||" \break
-  g2 g8 e fs g~g4 r2 r8 e fs4 fs8 fs~fs d e fs~fs4 r2.
-  g8 g a g~g e~e8 \small fs \normalsize g8 g a g~g e~e4 e8 fs~fs2 r4 r1
-  g4 a4 g8 e e fs g4 g4 g8 fs e fs~fs2 r2 r1 
+  b' cs d2 d8 cs8 b2 a4 a fs b a fs fs e d8 d 
+  b' cs d4 d8 d d cs b4 r a a fs b a fs e2. r2 r8 a,
   \bar "||" \break
-  b4 b b8 b4 b8 b a a a~a e e fs 
-  g fs4 fs8~fs4 r8 fs g fs4 e8~e d d d  
-  b'4 b  b8 b4 b8 b a a a~a e e fs g fs4 fs8~fs4 r
-  g fs8 e~e d4 b8~b2. r4 | r1 | r1 | r1 |
+  fs' g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d d8 b b4 a2 r2 a8 a
+  fs'8 g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d r a2 r4 | r2.
   \bar "||" \break
-
-
+  b'8 cs d2 d8 cs8 b2 a4 a fs b a8 a fs4 e2 r8 d 
+  b' cs d4 d8 d d cs b4 b8 a a4 a r b a fs e2 r4 r2 d4 a' a fs b8 b a4 fs e2 r4 r2.
+  a8 a a a fs4 b a fs fs e2 r2 r8 a8
+  \bar "||" \break
+  fs' g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d d8 b a2 r4 r2.
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
   \set stanza = "1."
-  Those lead -- ers who seemed 
-  _ seemed to be im -- por -- tant 
-  did not change _ the Good News I preach. 
+  When Pe -- ter came to An -- ti -- och, 
+  I chal -- lenged him to his face, 
+  for he was wrong. 
+  Pet -- er ate with the non -- Jews %people 
+  un -- til some Jews %peo -- ple 
+  sent from James came to An -- ti -- och. 
 
-  (It does not mat -- ter to me 
-  if they are “im -- por -- tant” or not. 
-  For to God e -- v'ry -- one's the same.)
+  When they ar -- rived, Pe -- ter stopped 
+  eat -- ing with those who weren’t Jew -- ish, 
+  and he sep -- ar -- a -- ted him -- self from them. 
+  He was a -- fraid of the Jews. 
 
-  But these lea -- ders saw that 
-  I'd been gi -- ven the work
-  tell -- ing the Good News 
-  to those who are not Jew -- ish, 
-  _ just as Pet -- er had the work of tell -- ing the Jews. 
+  So Pe -- ter was a hy -- po -- crite, 
+  as were the %o -- ther 
+  Jew -- ish be -- lie -- vers who joined with him. 
+  E -- ven Bar -- na -- bas was in -- flu -- enced 
+  by what these Jew -- ish be -- lie-v -- ers did.
 
-  God gave Pet -- er the po -- wer to work 
-  as an a -- pos -- tle for 
-  the Jew -- ish peo -- ple. 
-  But he al -- so gave me the pow -- er to work 
-  as an a -- pos -- tle for 
-  those who are not Jews. 
+  When I saw they were not foll -- 'wing the truth of the Good News, 
+  I spoke to Pe -- ter in front of them, %all. 
+  I said, “Pe -- ter, you are a Jew, but you are not liv -- ing like a Jew. 
+  You are liv -- ing like those who aren't Jew -- ish. 
 
+  So why do you 
+  now try to force 
+  those who are not Jew -- ish to live like Jews?”
   
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
   \set stanza = "3."
-  James, Pe -- ter, and John, 
-  who seemed to be  the lead -- ers, 
-  un -- der -- stood God  gave me spe -- cial grace,_
-  so they ac -- cept -- ed us both
-  Bar -- na -- bas and me. _ _ _
-  They a -- greed they'd go to the Jews
-  and that we should 
-  go to those who are not Jew -- ish. 
-
-  They on -- ly asked us: 
-  re -- mem -- ber to help the poor—  _
-  _ That is some -- thing that I real -- ly want -- ed to do.
-
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
@@ -204,7 +190,7 @@ verseeight = \lyricmode {
 }
 \score {
 	<<
-		\new ChordNames  \with {midiInstrument = #"piano"} {
+		\new ChordNames  \with {midiInstrument = #"acoustic grand"} {
 			\chordNames
 		}
 		\new Staff
