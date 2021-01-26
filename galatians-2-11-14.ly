@@ -15,24 +15,26 @@
   title = "Galatians 2:11-14"
   subtitle = "New Century Version"
   composer = "Jason Silver"
+  arranger = " "
   poet = ""
   copyright = "Silver Ink. 2021"
   tagline = "Permission granted to share with attribution."
 }
 \paper {
-  top-margin = #10
-  bottom-margin = #4
-  right-margin = #12
-  left-margin = #12
-  indent = #0
+  top-margin = 8\mm
+  bottom-margin = 4\mm
+  right-margin = 10\mm
+  left-margin = 10\mm
+  indent = 0\mm
+ 
  	%min-systems-per-page = 11 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 12 ) (minimum-distance . 0) (padding . -.59 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . -.59 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
-  markup-system-spacing = #'((basic-distance . 0) (padding . -6) (stretchability . 0))
+  markup-system-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
   % the distance between the last system of a score and the (title or top-level) markup that follows it:
   score-markup-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
   % the distance between two (title or top-level) markups:
@@ -107,7 +109,15 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
+  \skip2. d2. b:m7 g:maj9 e:m7 d c:1.2.5 d2. b:m7 g:maj9 e:m7 d c:1.2.5
+  g:/b g d:/fs b:m7 a:7sus4 g g:/b d:/a g:maj9 g:m6 g:1.3-.5-.6/a
+
+  d2. b:m7 g:maj9 e:m7 d c:1.2.5 d2. b:m7 g:maj9 e:m7 d c:1.2.5
+  g:/b g d:/fs b:m7 a:7sus4 g g:/b d:/a b:m7 a:7sus4 a:7
+  d:/fs g:maj7 a:7sus4 a:7
+  d:/fs g:maj7 a:7sus4 a:7
   
+  d b:m7 g:maj9 e:m7 d 
 }
 melody = \relative c'{
   \set Staff.midiInstrument = #"acoustic grand"
@@ -119,18 +129,19 @@ melody = \relative c'{
   \override Score.MetronomeMark.padding = #3
   \skip2 r8 a8 | fs' g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d d8 b a2 r4 r2.
   fs'8 g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d8 d d b a2 r4 r2 r8 d
-  \bar "||" \break
+  \bar "||" 
   b' cs d2 d8 cs8 b2 a4 a fs b a fs fs e d8 d 
   b' cs d4 d8 d d cs b4 r a a fs b a fs e2. r2 r8 a,
-  \bar "||" \break
+  \bar "||" 
   fs' g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d d8 b b4 a2 r2 a8 a
   fs'8 g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d r a2 r4 | r2.
-  \bar "||" \break
+  \bar "||" 
   b'8 cs d2 d8 cs8 b2 a4 a fs b a8 a fs4 e2 r8 d 
   b' cs d4 d8 d d cs b4 b8 a a4 a r b a fs e2 r4 r2 d4 a' a fs b8 b a4 fs e2 r4 r2.
-  a8 a a a fs4 b a fs fs e2 r2 r8 a8
-  \bar "||" \break
-  fs' g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d d8 b a2 r4 r2.
+  a8 a a a fs4 b a fs fs e2 r2 r8^\markup "Ritard." a,8
+  \bar "||" 
+  fs' g fs4 r8 d fs g fs4 r4 fs8 g a4 g8 (fs) e4 d d8 b b4 a2 r2. r2
+  \bar "|."
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
