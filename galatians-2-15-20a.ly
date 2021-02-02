@@ -27,24 +27,24 @@
   left-margin = 10\mm
   indent = 0\mm
  
- 	%min-systems-per-page = 11 % this allows you to squish line spacing
+ 	min-systems-per-page = 9 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 13 ) (minimum-distance . 0) (padding . -.3 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 10 ) (minimum-distance . 0) (padding . -.0 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
-  score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
+  score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . -10) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
   markup-system-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
   % the distance between the last system of a score and the (title or top-level) markup that follows it:
-  score-markup-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
+  score-markup-spacing = #'((basic-distance . 0) (padding . -15) (stretchability . 0))
   % the distance between two (title or top-level) markups:
-  markup-markup-spacing = #'((basic-distance . 0) (padding . 0))
+  markup-markup-spacing = #'((basic-distance . 0) (padding . -2))
   % the distance from the top of the printable area (i.e. the bottom of the top margin) to the first system on a page, when there is no (title or top-level) markup between the two:
   top-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0))
   % the distance from the top of the printable area (i.e. the bottom of the top margin) to the first (title or top-level) markup on a page, when there is no system between the two:
   top-markup-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0))
   % the distance from the last system or top-level markup on a page to the bottom of the printable area (i.e. the top of the bottom margin):
-  last-bottom-spacing = #'((basic-distance . 0 ) (minimum-distance . 0) (padding . 0) (stretchability . 0))
+  last-bottom-spacing = #'((basic-distance . 0 ) (minimum-distance . 0) (padding . -.5) (stretchability . 0))
 
   paper-width = 21.59\cm
   paper-height = 27.94\cm
@@ -118,7 +118,7 @@ chordNames = \chordmode {
   f4. a8:m7~a2:m7 bf4.:maj7 bf8:/c~bf2:/c f4. a8:m7~a2:m7 bf4.:maj7 bf8:/c~bf2:/c
   f4. a8:m7~a2:m7 bf4.:maj7 f8:/a~f2:/a ef1 bf4.:/c c8:7~c2:7
   f4. a8:m7~a2:m7 bf4.:maj7 bf8:/c~bf2:/c f4. a8:m7~a2:m7 bf4.:maj7 bf8:/c~bf2:/c
-  f4. a8:m7~a2:m7 bf4.:maj7 f8:/a~f2:/a ef1 bf4.:/c c8:7~c2:87
+  f4. a8:m7~a2:m7 bf4.:maj7 f8:/a~f2:/a ef1 bf4.:/c c8:7~c2:7
    
 }
 melody = \relative c'{
@@ -142,8 +142,8 @@ melody = \relative c'{
   \improvisationOn f4. f8~f2  f4. f8~f8 \improvisationOff a( bf) c~
   \bar "||"
   c2 r8 a bf c~c2 r8 a bf c~c2~c8 a4 f8~f a4 f8~f a bf c~c2 r8 a bf c~c f, f f g a4 g8~g2 r2 | r2 r8 a bf c~
-  c2 r8 a bf c~c4 r8 f, a bf c c~c2~c8 a4 f8~f a4 f8~f a bf c~c2 r8 a bf c~c f, f f g a4 g8~g2 r8 g a g~g2 r4
-
+  c2 r8 a bf c~c4 r8 f, a bf c c~c2~c8 a4 f8~f a4 f8~f a bf c~c2 r8 a bf c~c f, f f g a4 g8~g2 r8 g a g~g2 r2
+  \bar ":|."
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
