@@ -12,7 +12,7 @@
 '())))))))))
 
 \header {
-  title = "Galatians 2:11-14"
+  title = "Galatians 2:15-21"
   subtitle = "New Century Version"
   composer = "Jason Silver"
   arranger = " "
@@ -30,7 +30,7 @@
  	%min-systems-per-page = 11 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . -.59 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . 1 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
@@ -109,75 +109,62 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-  \skip2. d2. b:m7 g:maj9 e:m7 d c:1.2.5 d2. b:m7 g:maj9 e:m7 d c:1.2.5
-  g:/b g d:/fs b:m7 a:7sus4 g g:/b d:/a g:maj9 g:m6 g:1.3-.5-.6/a
-
-  d2. b:m7 g:maj9 e:m7 d c:1.2.5 d2. b:m7 g:maj9 e:m7 d c:1.2.5
-  g:/b g d:/fs b:m7 a:7sus4 g g:/b d:/a b:m7 a:7sus4 a:7
-  d:/fs g:maj7 a:7sus4 a:7
-  d:/fs g:maj7 a:7sus4 a:7
-  
-  d b:m7 g:maj9 e:m7 d 
+  f4. ef8~ef2 | bf4.:/d c8:/e~c2/e | f4. ef8~ef2 | bf4.:/d c8:/e~c2/e
+  f4. ef8~ef2 | bf4.:/d c8:/e~c2/e | f4. ef8~ef2 | bf4.:/d c8:/e~c2/e
+  bf4.:6/d c8:/e~c2:/e |f4. g8:m~g2:m | ef4. f8~f2
 }
 melody = \relative c'{
   \set Staff.midiInstrument = #"acoustic grand"
   %           \set melismaBusyProperties = #'()
-  \time 3/4
-	\key d  \major
+  \time 4/4
+	\key f \major
 	\clef treble
 	\tempo 4 = 100
   \override Score.MetronomeMark.padding = #3
-  \skip2 r8 a8 | fs' g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d d8 b a2 r4 r2.
-  fs'8 g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d8 d d b a2 r4 r2 r8 d
-  \bar "||" 
-  b' cs d2 d8 cs8 b2 a4 a fs b a fs fs e d8 d 
-  b' cs d4 d8 d d cs b4 r a a fs b a fs e2. r2 r8 a,
-  \bar "||" 
-  fs' g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d d8 b b4 a2 r2 a8 a
-  fs'8 g fs4 r8 d fs g fs4 r8 d fs g a4 g8 fs e4 d r a2 r4 | r2.
-  \bar "||" 
-  b'8 cs d2 d8 cs8 b2 a4 a fs b a8 a fs4 e2 r8 d 
-  b' cs d4 d8 d d cs b4 b8 a a4 a r b a fs e2 r4 r2 d4 a' a fs b8 b a4 fs e2 r4 r2.
-  a8 a a a fs4 b a fs fs e2 r2 r8^\markup "Ritard." a,8
-  \bar "||" 
-  fs' g fs4 r8 d fs g fs4 r4 fs8 g a4 g8 (fs) e4 d d8 b b4 a2 r2. r2
-  \bar "|."
+  \repeat volta 2{
+    r8 a' g g~g f f d~d f4 d8~d c c bf c2 r2 | r1 |
+    r8 a' g g~g f f d~d f4 d8~d c c bf c2 r8 f g a~a bf a g~g f g a~
+    
+  }
+  \alternative  {
+    { a8 bf a g~g f4 f8~ f2 r2 | \improvisationOn f4. f8~f2 \improvisationOff }
+    {  a8 bf a g~g f4 a8(~a bf) a g~g f( g) a~a bf a g~g2  }
+  }
+  \bar "||" \break
+
+
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
   \set stanza = "1."
-  When Pe -- ter came to An -- ti -- och, 
-  I chal -- lenged him to his face, 
-  for he was wrong. 
-  Pet -- er ate with the non -- Jews %people 
-  un -- til some Jews %peo -- ple 
-  sent from James came to An -- ti -- och. 
+  We're not born as non -- Jew -- ish “sin -- ners,” but as Jews. 
+  Yet we know that a per -- son is made right with God 
+  Not by fol -- l'wing the law, 
+  but by trust -- ing in Je -- sus Christ. 
 
-  When they ar -- rived, Pe -- ter stopped 
-  eat -- ing with those who weren’t Jew -- ish, 
-  and he sep -- ar -- a -- ted him -- self from them. 
-  He was a -- fraid of the Jews. 
-
-  So Pe -- ter was a hy -- po -- crite, 
-  as were the %o -- ther 
-  Jew -- ish be -- lie -- vers who joined with him. 
-  E -- ven Bar -- na -- bas was in -- flu -- enced 
-  by what these Jew -- ish be -- lie-v -- ers did.
-
-  When I saw they were not foll -- 'wing the truth of the Good News, 
-  I spoke to Pe -- ter in front of them, %all. 
-  I said, “Pe -- ter, you are a Jew, but you are not liv -- ing like a Jew. 
-  You are liv -- ing like those who aren't Jew -- ish. 
-
-  So why do you 
-  now try to force 
-  those who are not Jew -- ish to live like Jews?”
-  
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
   \set stanza = "3."
+
+So we, too, have put our faith in Je -- sus _ Christ, 
+that we're made right with God since we trust -- ed in Christ. 
+Not from fol -- l'wing the law, be -- cause no 
+
+_ _ _ _ _ _ _
+_ one can be made 
+right with God by fol -- l'wing the law.
+
+We Jews came to Christ, try -- ing to be made right with God, and it be -- came clear that we are 
+sinn -- ers, too. Does this mean that Christ en -- cour -- ag -- es sin? No! But I would real -- ly 
+be wrong to be -- gin teach -- ing a -- gain those things that I gave up.  It was the law that put 
+me to death, and I died to the law so that I can now live for God.  I was put to death on the cross 
+with Christ, and I do not live a -- ny -- more— it is Christ who lives in me. I still live in my 
+bo -- dy, but I live by faith in the Son of God who loved me and gave hims -- elf to save me.  By 
+say -- ing these things I am not go -- ing a -- gainst God’s grace. Just the op -- po -- site, if 
+the law could make us right with God, then Christ’s death would be use -- less.
+  
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
