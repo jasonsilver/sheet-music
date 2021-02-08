@@ -1,5 +1,5 @@
 \language "english"
-\version "2.18.3"
+\version "2.18.2"
 #(define (line-break-every-nth-engraver bars-per-line)
   (lambda (context)
      (make-engraver
@@ -12,11 +12,11 @@
 '())))))))))
 
 \header {
-  title = "Galatians 1:11-16"
-  subtitle = "New Century Version"
+  title = "Hebrews 4:8-13"
+  subtitle = "New English Translation"
   composer = "Jason Silver"
   poet = ""
-  copyright = "Silver Ink. 2020"
+  copyright = "Silver Ink. 2021"
   tagline = "Permission granted to share with attribution."
 }
 \paper {
@@ -25,14 +25,14 @@
   right-margin = #12
   left-margin = #12
   indent = #0
- 	%min-systems-per-page = 10 % this allows you to squish line spacing
+ 	min-systems-per-page = 10 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 16 ) (minimum-distance . .10) (padding . 1 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 12 ) (minimum-distance . .10) (padding . 1 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
-  markup-system-spacing = #'((basic-distance . 0) (padding . 0) (stretchability . 0))
+  markup-system-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
   % the distance between the last system of a score and the (title or top-level) markup that follows it:
   score-markup-spacing = #'((basic-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between two (title or top-level) markups:
@@ -101,85 +101,90 @@ chExceptionMusic = {
   <c a d g>1-\markup { "m2" } % 1.6.2.
   <c e g d'>1-\markup { \super "add9" } % 1.3.5.9
   <c ef g d'>1-\markup { "m" \super "add9" } % 1.3.5.9
+  <c g d'>1-\markup {"5" \super "add9" } % 1.5.9
 }
 chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #t) ignatzekExceptions)
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-  g1 b2:m7 e:m7 f1:maj7 g1 b2:m7 e:m7 f:maj7 d:7sus4 
-  d2:/c g:/b a:m7 a:m9/f d2:/c g:/b a1:m7 d2 g:/b e1:m7 f:1.2.3.5 
-  f:1.2.3.5
-  a1:m g2:/b d a1:m g2:/b d c1 a:m9
-  % chorus
-  g2 b:m7 a:m7 f:maj9 g b:m a:m c:/d g d:/fs e:m g:/d c:6 d:11
-  g2 b:m7 a:m7 f:maj9 g b:m a:m c:/d g d:/fs e:m c:m6/ef g:/d b:/ds e:m g:/d
-  a1:7/cs c:/d g1
+  c1:/e f:1.5.9 c2:/e e:m f:1.3.5.9 f:maj7
+  c1:/e f:1.5.9 c2:/e e:m f:1.3.5.9 f:maj7
+  c1:/e f:1.5.9 c2:/e e:m f:1.3.5.9 f:maj7
+  c1:/e f:1.5.9 a2:m7 g f1:maj7
+
+  d1:m7 g:sus4 f:/a e2:m7 g 
+  d1:m7 g:sus4 f:/a g2:sus4 g
+
+  c1 c d2:m f:maj7 g:sus4 g
+  c1 c:/e f2 f:/a g:sus4 g
+  f2 a:m g c:/e f a:m g g:sus4 c1 c
+
+  c1:/e f:1.5.9 c2:/e e:m f:1.3.5.9 f:maj7
+  c1:/e f:1.5.9 c2:/e e:m f:1.3.5.9 f:maj7
+
+
 }
 melody = \relative c'{
-  \set Staff.midiInstrument = #"piano"
-  %           \set melismaBusyProperties = #'()
+  % \set melismaBusyProperties = #'()
   \time 4/4
-	\key g  \major
+	\key c  \major
 	\clef treble
-	\tempo 4 = 85
+	\tempo 4 = 90
   \override Score.MetronomeMark.padding = #3
-  \repeat volta 2 {  
-	b8. c16~c8 d fs4 g4 r4. b,8 b c d e~e4 r r d8 c 
-  b8. c16~c8 d fs8 g16 g~g4 r4 d8 c b8 c d e~e d4 c8~c d4.  \bar "||"
-  fs8 fs fs g~g fs d d~d e~e4 r4 d8 e fs fs fs g~g fs d e~e2 r4. d8
-  fs4 d g r4 r2 d8 c b a~
-  }
-  \alternative{
-    { a2 r4. b8 }
-    { a2 r2 }
-  }
+  r4 g'8 f f e e4 r4. c8 d e f e~e2 r2 r2 r8 e d c~
+  c g' g f f e e4 r4. c8 d e e f e2 r2 r2 r8 e d c~
+  c g' f f e e~e4 r c8 c d e f e~e2 r2 r2 r8 e d c~
+  c g' g f f e e4 r8 c c c d e f e~e4 c8 c d e (f) e~e2 r2
   \bar "||"
-  a'8. a16~a8 a~a16 b8.~b8 g b8 a g fs~fs4 r8 g
-  a8.  a16~a8 a8 a8. b16~b4 | b8. (a16~a8) g8 fs4 g8 d d e e4 r2 | r2. r8 a
-  % chorus
+  a,4. f'8~f4 e d4. c8~c4 b a4. f'8~f4 e4 e8 d c d~d4 r
+  a4. f'8~f4 e d4. e8 d c c b a4. f'8 f e e f e d d4 r4
+  
+  c8 c \bar ".|:-||"
+  d e e c d e g d e4. g8 d e e4 f8 f f f f e4 d8~d2 r2 
+  d8 e e c d e e g d e e c d e~e4 r4 f8 g f4 e8 d e d~d4 r
+  c8  b  a4. e'8~e4  c8 b~b4 r2 c8  b  a4.  e'8~e4 c8 b~b2    c4  b8  c~c2 r2 r1
   \bar "||"
-  b4 r d, r e8 g~g a~a4 g8 b~b4 r8  d,8~d4 r e8 g g a~a g a b~b4 d8 b~b4 a8 g~g4. a8~a b4 a8~a2 r4. a8
-  b4 r d, r e8 g~g a~a4 g8 b~b4 r8  d,8~d4 r e8 g4 a8~a g a b~b4 d8 b~b4 a8 a~a g~g4 r4 a8 b~
-  b4. b8~b4 a8 a~a g8~g4 b8 (c) b4 b8 (a) a2 r4 r1 | 
-  \improvisationOn g1 \improvisationOff 
-  \bar "|."
+  r4 g'8 f f e e4 r2 d8 e f e~e2 r2 r2 r8 e d c~
+  c g' g f f e e4 r8 c c c d e f e~e2 r2 r2. c8 c
+  \bar ":|."
+ 
 }
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
   \set stanza = "1."
-	Bro -- thers and sis -- ters, 
-	I want you to know 
-	that the Good News I preached to you 
-	was not made up by hu -- man be -- ings. 
-	I did not get it from peo -- ple, 
-	nor did a -- ny -- one teach it to me,
-	but Je -- sus Christ showed it to me.
-	
-	You've 
+  For if Jo -- shu -- a had gi -- ven them rest,  God would not 
+  have spo -- ken af -- ter -- ward  a -- bout a -- no -- ther day. And so a
+  Sab -- bath rest re -- mains for the peo -- ple of God. For the one
+  who en -- ters God’s own rest has al -- so rest -- ed from works, 
+  just as God did too. 
+  
+  Thus we must make ev -- 'ry ef -- fort to
+   en -- ter that rest, 
+  so none may fall by fol -- low -- ing the 
+   same pat -- tern of dis -- o -- be -- di -- ence. 
+
+  \set stanza = "Chorus"
+
+  For the word of God is liv -- ing and a -- ctive 
+  and shar -- per than 
+  a -- ny dou -- ble -- edg -- ed sword, 
+  pierc -- ing e -- ven to the point: di -- vid -- ing soul from spir -- it,      and the joints from the mar -- row; 
+  it is  a -- ble to judge
+  the de -- sires and the thoughts 
+  of the heart. 
+
+  \set stanza = "2."
+  And no crea -- ture is hid -- den from God, 
+  but all is na -- ked, ex -- posed to him 
+  to whom we must give ac -- count.
+
+  For the
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
   \set stanza = "2."
-  heard of my past life 
-	in the Jew -- ish faith. 
-	_ I at -- tacked the church of God 
-	and I tried to des -- troy __ _ it. __ _ 
-	I was be -- com -- ing a lead -- er 
-  in the Jew -- ish re -- li -- gion, I did 
-	bet -- ter than most o -- thers my age. 
-  _ _ 
-	I tried hard -- er than a -- ny -- one else 
-	to fol -- low the teach -- ings 
-	hand -- ed down by our an -- ces -- tors.
-	
-	But God had spe -- cial plans for me 
-	and set me a -- part for his work 
-	e -- ven be -- fore I was born. 
-	He called me through his grace 
-	and showed his son to me 
-	so that I might tell the Good News 
-	a -- bout him to those who are not Jew -- ish. 
+
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
@@ -203,7 +208,7 @@ verseeight = \lyricmode {
 }
 \score {
 	<<
-		\new ChordNames  \with {midiInstrument = #"piano"} {
+		\new ChordNames  {
 			\chordNames
 		}
 		\new Staff
