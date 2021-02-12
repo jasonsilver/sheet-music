@@ -122,11 +122,11 @@ melody = \relative c'{
 	\clef treble
 	\tempo 4 = 100
   \override Score.MetronomeMark.padding = #3
-    e4 e f g g f e d c c d e e8~e~e d8 d2 \break
-    e4 e f g g f e d c c d e d c c2 \break
+    e4 e f g g f e d c c d e e4. d8 d2 \break
+    e4 e f g g f e d c c d e d4. c8 c2 \break
     \bar "||"
     d4 d e c d e8 f e4 c d e8 f e4 d c d g,2 \break
-    e'4 e f g g f e d c c d e d c c2
+    e'4 e f g g f e d c c d e d4. c8 c2
     \bar "|."
 
 }
