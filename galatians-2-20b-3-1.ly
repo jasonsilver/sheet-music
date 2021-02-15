@@ -25,14 +25,14 @@
   right-margin = #12
   left-margin = #12
   indent = #0
- 	%min-systems-per-page = 10 % this allows you to squish line spacing
+ 	min-systems-per-page = 10 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 10 ) (minimum-distance . .10) (padding . 6 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 4 ) (minimum-distance . .10) (padding . .6 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
-  markup-system-spacing = #'((basic-distance . 0) (padding . 0) (stretchability . 0))
+  markup-system-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
   % the distance between the last system of a score and the (title or top-level) markup that follows it:
   score-markup-spacing = #'((basic-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between two (title or top-level) markups:
@@ -111,9 +111,9 @@ chordNames = \chordmode {
   gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
   gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 cs:m7 cs:m7
   gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
+  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 cs:m7 cs:m7 gs:m b
   gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
-  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
-  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
+  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7 
 
 }
 melody = \relative c'{
@@ -124,30 +124,38 @@ melody = \relative c'{
 	\tempo 4 = 74
   \override Score.MetronomeMark.padding = #3
   \tiny
-    \set countPercentRepeats = ##t
+  \set countPercentRepeats = ##t
   \repeat percent 4 { ds8 b ds b ds b' as gs | ds8 b ds b ds b' as gs }
-  \bar "||" \break
+  \bar "||" 
   \normalsize
   r2 r8 fs e ds~ds2~ds8 ds b cs ds2 r2 | r1 | r2 r8 fs e ds~ds2~ds8 b4 cs8~cs2 r2 r1
-  r2 r8 fs e ds~ds4 e8 ds~ds4 b8 cs ds2 r2 | r1 | r2 r8 fs e ds ds2~ds8 b4 cs8~cs2.~cs8 ds~ds2 r2 
+  r2 r8 fs e ds~ds4 e8 ds~ds4 b8 cs ds2 r2 | r1 | r2 r8 fs e ds ds2~ds8 b4 cs8~cs2 r4. ds8~ds2 r2 
+  \bar "||" 
+  r2 r8 fs e ds~ds4 e8 ds~ds4 b8 cs ds2 r2 | r1 | r2 r8 fs e ds~ds4 e8 ds~ds b4 cs8~cs2 r2 r1
+  r2 r8 fs e ds~ds4 e8 ds~ds4 b8 cs~cs ds~ds4 r2 | r1 | r2 r8 fs e ds ds4 e8 ds~ds4 b8 cs8~cs4. ds8~ds2
+  r2 fs4 e8 e~ e ds~ds4 r2 |  r1 
+  \bar "||"
+  r2. fs8 e~e4 ds8 ds~ds4 b8 cs~cs ds ds2 r4 | r1 | r2. e8 ds~ds2 ds4 b8 cs~cs4. ds8~ds2 r1 
+  r2 r8 fs fs e ds4 e8 ds~ds4 b8 cs~cs ds~ds2 e8 ds~ds2 r8 ds ds b cs4 ds4~ds8 ds8 ds b cs4 ds2 r4 | r1
 
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-  \set stanza = "1."
   I still live in my bo -- dy, 
   but I live by faith 
   in the Son of God who loved me 
   and gave him -- self to save me.
-  By say -- ing these things I am 
+  When I say these things I am not
   not go -- ing a -- gainst God’s grace. 
   Just the op -- po -- site, if the law could make us right with God, 
   then Christ’s death would be use -- less. 
-  You peop -- le in Ga -- la -- tia were told very clear -- ly 
+
+  You peop -- le in Gal -- a -- ti -- a 
+  were told ve -- ry clear -- ly 
   a -- bout the death of Je -- sus Christ on the cross. 
-  But you were fool -- ish; you let some -- one trick you.
+  But you were fool -- ish; let some -- one trick you.
 }
 versetwo = \lyricmode {
 _ _ _ _ _ _ _ _ _ _ _ _ _ _
@@ -176,7 +184,7 @@ verseeight = \lyricmode {
 }
 \score {
 	<<
-		\new ChordNames  \with {midiInstrument = #"piano"} {
+		\new ChordNames  {
 			\chordNames
 		}
 		\new Staff
