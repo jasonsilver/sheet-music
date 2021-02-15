@@ -1,5 +1,5 @@
 \language "english"
-\version "2.18.3"
+\version "2.18.2"
 #(define (line-break-every-nth-engraver bars-per-line)
   (lambda (context)
      (make-engraver
@@ -12,11 +12,11 @@
 '())))))))))
 
 \header {
-  title = "Galatians 1:10"
+  title = "Galatians 2:20b - 3:1"
   subtitle = "New Century Version"
   composer = "Jason Silver"
   poet = ""
-  copyright = "Silver Ink. 2020"
+  copyright = "Silver Ink. 2021"
   tagline = "Permission granted to share with attribution."
 }
 \paper {
@@ -28,7 +28,7 @@
  	%min-systems-per-page = 10 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 25 ) (minimum-distance . .10) (padding . 6 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 10 ) (minimum-distance . .10) (padding . 6 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
@@ -107,35 +107,47 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-  d1:m7 c:/e d:m7 a:m7 d:m7 c:/e f g:/a
-  d1:m7 c:/e d:m7 a:m7 d:m7 c:/e f:maj7 f:/g c
+  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
+  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
+  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 cs:m7 cs:m7
+  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
+  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
+  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
+  gs1:m gs:m gs:m/fs gs:m/fs e:maj7 e:maj7 e:maj7 e:maj7
+
 }
 melody = \relative c'{
-  \set Staff.midiInstrument = #"piano"
   %           \set melismaBusyProperties = #'()
   \time 4/4
-	\key c  \major
+	\key gs  \minor
 	\clef treble
-	\tempo 4 = 100
+	\tempo 4 = 74
   \override Score.MetronomeMark.padding = #3
-  c'8. b16~b8 g~g4 e8 c d8. e16~e4 r2 c'8. (b16~b8) g~g e e8 c d8. e16~e4 r2
-  c'8. (b16~b8 g~g) e e c d8. e16~e8 f e8. d16~d8 c c2 r2 \slashOn r4 r r r \slashOff
-  c'8. b16~b8 g~g e e c d8. e16~e4 r2 c'8. b16~b8 g~g e e8 c d8. e16~e4 r4. g8
-  c8. b16~b8 g~g e e c d8. e16~e4 r4. c8 e e e f e8. d16~d8 c c2 r2 
-  \improvisationOn c'1
-  \bar "|."
+  \tiny
+    \set countPercentRepeats = ##t
+  \repeat percent 4 { ds8 b ds b ds b' as gs | ds8 b ds b ds b' as gs }
+  \bar "||" \break
+  \normalsize
+  r2 r8 fs e ds~ds2~ds8 ds b cs ds2 r2 | r1 | r2 r8 fs e ds~ds2~ds8 b4 cs8~cs2 r2 r1
+  r2 r8 fs e ds~ds4 e8 ds~ds4 b8 cs ds2 r2 | r1 | r2 r8 fs e ds ds2~ds8 b4 cs8~cs2.~cs8 ds~ds2 r2 
 
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
   \set stanza = "1."
-  Do you think I am try -- ing to __ make peo -- ple ac -- cept me?
-  No, God is the One I am try -- ing to please. 
-  Am I try -- ing to please peo -- ple? 
-  Am I try -- ing to please peo -- ple?
-  If I still want -- ed to  please peo -- ple, 
-  I would not be a ser -- vant of Christ.
+  I still live in my bo -- dy, 
+  but I live by faith 
+  in the Son of God who loved me 
+  and gave him -- self to save me.
+  By say -- ing these things I am 
+  not go -- ing a -- gainst God’s grace. 
+  Just the op -- po -- site, if the law could make us right with God, 
+  then Christ’s death would be use -- less. 
+  You peop -- le in Ga -- la -- tia were told very clear -- ly 
+  a -- bout the death of Je -- sus Christ on the cross. 
+  But you were fool -- ish; you let some -- one trick you.
 }
 versetwo = \lyricmode {
 _ _ _ _ _ _ _ _ _ _ _ _ _ _
