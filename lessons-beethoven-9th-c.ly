@@ -18,7 +18,7 @@
   composer = ""
   poet = ""
   arranger = "Arr. Jason Silver"
-  copyright = "Silver Ink. 2020"
+  copyright = "Silver Ink. 2021"
   tagline = "Permission granted to share with attribution."
 }
 \paper {
