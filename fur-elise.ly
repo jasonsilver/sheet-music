@@ -13,9 +13,9 @@
 '())))))))))
 
 \header {
-  title = "Beethoven's 9th"
+  title = "Fur Elise"
   subtitle = "Simple Reading Excercise"
-  composer = ""
+  composer = "Beethoven"
   poet = ""
   arranger = "Arr. Jason Silver"
   copyright = "Silver Ink. 2021"
@@ -109,24 +109,17 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	%\set Staff.midiInstrument = #"string ensemble 1"
-  c g a:m g 
-  c g a:m g2 c2
-  g c g c g a:m d:7 g
-  c1 g a:m g2 c
+  
 }
 melody = \relative c'{
   %\set Staff.midiInstrument = #"piano"
   %           \set melismaBusyProperties = #'()
-  \time 4/4
+  \time 3/4
 	\key c  \major
 	\clef treble
 	\tempo 4 = 100
   \override Score.MetronomeMark.padding = #3
-    e4 e f g g f e d c c d e e4. d8 d2 \break
-    e4 e f g g f e d c c d e d4. c8 c2 \break
-    \bar "||"
-    d4 d e c d e8 f e4 c d e8 f e4 d c d g,2 \break
-    e'4 e f g g f e d c c d e d4. c8 c2
+    \skip2 e'8 ds e ds e b d c a4. c8 e a 
     \bar "|."
 
 }
