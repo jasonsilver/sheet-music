@@ -30,7 +30,7 @@
  	%min-systems-per-page = 10 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 12 ) (minimum-distance . .10) (padding . 6 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 16 ) (minimum-distance . .10) (padding . 8 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
@@ -109,8 +109,9 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	%\set Staff.midiInstrument = #"string ensemble 1"
-  
-}
+  \skip2. e2.:7 a:m e:7 a:m e:7 a:m e:7 a:m c g:7 a:m e2:7 r4 r2.
+  a:m e:7 a:m e:7 a:m e:7 a:m  
+} 
 melody = \relative c'{
   %\set Staff.midiInstrument = #"piano"
   %           \set melismaBusyProperties = #'()
@@ -119,7 +120,17 @@ melody = \relative c'{
 	\clef treble
 	\tempo 4 = 100
   \override Score.MetronomeMark.padding = #3
-    \skip2 e'8 ds e ds e b d c a4. c8 e a 
+    \skip2 e'8 ds | e ds e b d c a4. c,8 e a b4. e,8 gs b c4. e,8 e' ds
+    \break
+    e ds e b d c a4. c,8 e a b4. e,8 c' b a4. b8 c d 
+    \break
+    e4. g,8 f' e d4. f,8 e' d c4. e,8 d' c b2  e8 ds |
+    \break
+    e ds e b d c a4. c,8 e a b4. e,8 gs b c4. e,8 e' ds
+    \break
+    e ds e b d c a4. c,8 e a b4. e,8 c' b a2.
+
+
     \bar "|."
 
 }
@@ -194,8 +205,8 @@ verseeight = \lyricmode {
 		#(layout-set-staff-size 20)
 		\context {
 			\Score
-			% \override NonMusicalPaperColumn #'line-break-permission = ##f
-			%\consists #(line-break-every-nth-engraver 4)
+			%\override NonMusicalPaperColumn #'line-break-permission = ##f
+			%\consists #(line-break-every-nth-engraver 5)
 		}
 	}
 	\midi { }
