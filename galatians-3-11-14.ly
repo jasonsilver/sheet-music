@@ -125,7 +125,7 @@ melody = \relative c'{
   \time 4/4
 	\key af  \major
 	\clef treble
-	\tempo 4 = 100
+	\tempo 4 = 98
   \override Score.MetronomeMark.padding = #3
   r4 c8 ef~ef f4 c8~c2 r2 | r4 c8 ef~ef f4 c8~|c c c c~c bf4 c8~|
   c4 r8 ef~ef f4 c8~c2 r2 | r4 c8 ef~ef f4 c8~|c bf4 bf8~bf4 r4 |
