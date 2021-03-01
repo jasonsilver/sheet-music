@@ -199,13 +199,14 @@ versethree = \lyricmode {
   I kept them in thy name: those that thou hast gave, and none of them is lost, 
   but the son of per -- di -- tion; 
   that the scrip -- ture be ful -- filled.
+  
   \set stanza = "4."
   And now __ _ come I to thee; and these things I speak in the world, that they might have my joy ful -- filled. 
   I have giv'n, gi -- ven them thy word; and the world hath hat -- ed them, be -- cause they're not of the world,
   e -- ven as I'm not of the world. 
   
   I pray not that thou takes them, but that thou should -- est keep them from the e -- vil one. 
-  They're not of the world, as I'm not. Sanc -- ti -- fy them through thy truth: thy word is truth. 
+  They're not of the world, as I'm not. Sanc -- ti -- fy them thru thy truth: thy word is truth. 
   As thou hast sent me in -- to the world, e -- ven so have I al -- so sent them into the world. 1And for their sakes I 
   sanc -- ti -- fy my -- self, that they al -- so might be sanc -- ti -- fied through the truth.
 }
