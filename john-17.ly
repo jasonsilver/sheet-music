@@ -28,13 +28,13 @@
  %min-systems-per-page = 9 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . .09 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 0 ) (minimum-distance . 0) (padding . 2 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
-  markup-system-spacing = #'((basic-distance . 0) (padding . 0) (stretchability . 0))
+  markup-system-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
   % the distance between the last system of a score and the (title or top-level) markup that follows it:
-  score-markup-spacing = #'((basic-distance . 0) (padding . 0) (stretchability . 0))
+  score-markup-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
   % the distance between two (title or top-level) markups:
   markup-markup-spacing = #'((basic-distance . 0) (padding . 0))
   % the distance from the top of the printable area (i.e. the bottom of the top margin) to the first system on a page, when there is no (title or top-level) markup between the two:
@@ -150,7 +150,7 @@ chordNames = \chordmode {
   b' a g f g4 r b8 a g f g4 r8 c, b' a g f g4 e8 c d4 d8 e d4 g, f'8 e f e f4 e d2 r \bar ".|:-||" \break
 
    \repeat volta 3{
-    e8 g4. g8 g b a~a4 r g8 g16 g~g b8. a4 a8 b c c b a a g g e g4 r4
+    e8 g4 e8 g g b a~a4 r g8 g16 g~g b8. a4 a8 b c c b a a g g e g4 r4
     e8 g g4 g8 g g b a4 r4 g8 g g b a4 b c8 c b a a g e g~g4 r4 r8 a16 a a8 g f e c d~d2 r2
     \bar "||"
     r4 e'8 d8~d4 f,8 e~e4 c'8 c~c b~b4 r4 e8 d8~d4 f,8 e~ \time 2/4 e e g c\time 4/4 c b b a b2 
@@ -200,7 +200,7 @@ versethree = \lyricmode {
   but the son of per -- di -- tion; 
   that the scrip -- ture be ful -- filled.
   \set stanza = "4."
-  And now come I to thee; and these things I speak in the world, that they might have my joy ful -- filled. 
+  And now __ _ come I to thee; and these things I speak in the world, that they might have my joy ful -- filled. 
   I have giv'n, gi -- ven them thy word; and the world hath hat -- ed them, be -- cause they're not of the world,
   e -- ven as I'm not of the world. 
   
@@ -216,8 +216,8 @@ versefour = \lyricmode {
   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
   \set stanza = "5."
-  Nei -- ther pray I for these a -- lone, but for them al -- so which shall be -- lieve on me through their 
-  word; that they all may be one; as thou, Fa -- ther, art in me, and I in thee, that they al -- so may be 
+  I don't pray for these a -- lone, but for them al -- so which __ _ shall be -- lieve on me __ _ through their
+  word; that they __ _ all may __ _ be one; as thou, Fa -- ther, art in me, and I in thee, that they al -- so may be 
   one in us: that the world may be -- lieve that thou hast sent me. 
   And the glory which thou ga -- vest me I have gi -- ven them; that they may be one, even as we are one: 
   I in them, and thou in me, that they may be made per -- fect in one; and that the world may know that 
