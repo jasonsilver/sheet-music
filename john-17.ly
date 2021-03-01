@@ -115,7 +115,11 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-  c2 e:m f e:m f a:m g:sus4 g c e:m f e:m f a:m
+  c2 e:m f e:m f a:m g:sus4 g c e:m f e:m f a:m g:sus4 g
+  c:/e f:1.3.5.9 c:/g g c:/e f:1.3.5.9 a:m7 g:sus4 g c:/e f:1.3.5.9 c:/g g g g c:/e f:1.3.5.9 c:/g g1
+  c2:/e f:1.3.5.9 c:/g g c:/g g2 g1 f d:m
+  a2:m c:/g f:maj7 c:/e f:maj7 c:/e d:m7 c:/bf
+
 }
   melody = \relative c'{
   \time 4/4
@@ -125,14 +129,22 @@ chordNames = \chordmode {
 
   %\set melismaBusyProperties = #'()
   %\unset melismaBusyProperties
-  \bar ".|:"
-  e8 g4 e8 g g b a~a4 r g8 g16 g~g b8. a4 a8 b c c b a a g g e g4 r4
-  e8 g g4 g8 g g b a4 r8. f16 g8 g g b a4 b c8 c16 c b b a8 a g g16 e8. g4 r4
-  \bar "||"
-  r4 e'8 d8~d4 f,8 e~e4 c'8 c~c b~b4 r4 e8 d8~d4 f,8 e~ \time 2/4 e e g c~ \time 4/4 c b a b~b2 
-  r4 e8 d8~d4 f,8 e~e4 c'8 c~c b4 b8~ \time 2/4 b2 
-  \bar ":|." \time 4/4 r4 e8 d8~d4 f,8 e~ \time 2/4 e4 c'8 b~ \time 4/4 b2 r2 
-  
+  \repeat volta 3{
+    e8 g4 e8 g g b a~a4 r g8 g16 g~g b8. a4 a8 b c c b a a g g e g4 r4
+    e8 g g4 g8 g g b a4 r8. f16 g8 g g b a4 b c8 c16 c b b a8 a g g16 e8. g4 r4
+    \bar "||"
+    r4 e'8 d8~d4 f,8 e~e4 c'8 c~c b~b4 r4 e8 d8~d4 f,8 e~ \time 2/4 e e g c~ \time 4/4 c b a b~b2 
+    r4 e8 d8~d4 f,8 e~e4 c'8 c~c b4 b8~ 
+  }
+  \alternative{
+    { \time 2/4 b2 }
+    { \time 2/4 b2\repeatTie  \time 4/4 r4 e8 d8~d4 f,8 e~ \time 2/4 e4 c'8 b~ \time 4/4 b2 r2 }
+    { b8\repeatTie  r8 e8 d8~d4 f,8 e~e4 c'8 c~c b a b~b4 c8 c~c b b4~b2 r2  }
+  }
+  r8 a a g g f f e d2 r2 \bar "||" \break
+  r8 e e4 e8 f e c d e16 e~e4 r8 f8 e c d e16 e~ e4 r16 e e8 d c a4 r e'8 f e c
+  r8 e e c e f e c d e16 e~e4 r8 f8 e c d e16 e~ e4 r16 e e8 d c a4 r e'8 f e c
+
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
@@ -152,16 +164,21 @@ versetwo = \lyricmode {
   be -- fore the world was.
 
   I have made known thy name to the men which thou ga -- vest me of the world: 
-  they're thine, and thou ga -- vest them me; and they have kept thy word.
-
-  Now they've known that all things what -- so -- ever thou hast gi -- ven me are of thee. 
-  For I have gi -- ven un -- to them the words which thou ga -- vest me; and they have re -- ceived them, 
-  and have known sure -- ly that I came out from thee, and they have be -- lieved that thou didst send me.
-  I pray for them: I pray not for the world, but for them which thou hast gi -- ven me; for they are thine.
+  they're thine, and thou ga -- vest them me; _ and they have kept thy word.
+}
+versethree = \lyricmode {
+	\override LyricText #'font-size = \LyricFontSize
+  \set stanza = "3."
+  Now they have known that all things thou hast gi -- ven me are of thee. 
+  For I have gi -- ven un -- to them; gi -- ven words which thou ga -- vest me; and they have re -- ceived them, 
+  and know, sure -- ly that _ I came out from __ _ thee, and they've be -- lieved thou sent me.
+  I pray for them: I pray not for the world, but for them which thou hast giv'n me; 
+  _  _ _ _ _ _ _ _
+  for they are thine.
   And all mine are thine, and thine are mine; and I am glo -- ri -- fied in them.
 
-  And now I am no more in the world, but these are in the world, and I come to thee. Ho -- ly Father, keep 
-  through thine own name those whom thou hast gi -- ven me, that they may be one, as we are.
+  And now I am no more in the world, but these are in the world, and I come to thee. Ho -- ly Fa -- ther, 
+  keep thru thine own name those thou ga -- vest me, that they may be one, as we are.
   While I was with them in the world, I kept them in thy name: those that thou ga -- vest me I have kept, and 
   none of them is lost, but the son of per -- di -- tion; that the scrip -- ture might be ful -- filled.
 
@@ -187,10 +204,6 @@ versetwo = \lyricmode {
    O righ -- teous Fa -- ther, the world hath not known thee: but I have known thee, and these have known 
    that thou hast sent me. And I have de -- clared un -- to them thy name, and will de -- clare it: that 
    the love where -- with thou hast loved me may be in them, and I in them.
-}
-versethree = \lyricmode {
-	\override LyricText #'font-size = \LyricFontSize
-
 }
 versefour = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
