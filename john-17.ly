@@ -157,7 +157,7 @@ chordNames = \chordmode {
     r4 e8 d8~d f, f e~e4 c'8 c~c b~b4 
   }
   \alternative{
-    { \time 2/4 b2 }
+    { r4 e8 d~d4 f,8 e~e g c c~c b b a | b2 r2 }
     { \time 2/4 b2\repeatTie  \time 4/4 r4 e8 d8~d4 f,8 e~ \time 2/4 e4 c'8 b~ \time 4/4 b2 r2 }
     { b8\repeatTie  r8 e8 d8~d4 f,8 e~e4 c'8 c~c b a b~b4 c8 c~c b b4~b2 r2  }
   }
@@ -199,7 +199,7 @@ versethree = \lyricmode {
   I kept them in thy name: those that thou hast gave, and none of them is lost, 
   but the son of per -- di -- tion; 
   that the scrip -- ture be ful -- filled.
-
+  \set stanza = "4."
   And now come I to thee; and these things I speak in the world, that they might have my joy ful -- filled. 
   I have giv'n, gi -- ven them thy word; and the world hath hat -- ed them, be -- cause they're not of the world,
   e -- ven as I'm not of the world. 
@@ -208,7 +208,14 @@ versethree = \lyricmode {
   They're not of the world, as I'm not. Sanc -- ti -- fy them through thy truth: thy word is truth. 
   As thou hast sent me in -- to the world, e -- ven so have I al -- so sent them into the world. 1And for their sakes I 
   sanc -- ti -- fy my -- self, that they al -- so might be sanc -- ti -- fied through the truth.
-
+}
+versefour = \lyricmode {
+	\override LyricText #'font-size = \LyricFontSize
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  \set stanza = "5."
   Nei -- ther pray I for these a -- lone, but for them al -- so which shall be -- lieve on me through their 
   word; that they all may be one; as thou, Fa -- ther, art in me, and I in thee, that they al -- so may be 
   one in us: that the world may be -- lieve that thou hast sent me. 
@@ -223,10 +230,6 @@ versethree = \lyricmode {
    O righ -- teous Fa -- ther, the world hath not known thee: but I have known thee, and these have known 
    that thou hast sent me. And I have de -- clared un -- to them thy name, and will de -- clare it: that 
    the love where -- with thou hast loved me may be in them, and I in them.
-}
-versefour = \lyricmode {
-	\override LyricText #'font-size = \LyricFontSize
-
 }
 versefive = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
