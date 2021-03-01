@@ -118,7 +118,10 @@ chordNames = \chordmode {
   c2 e:m f e:m f a:m g:sus4 g c e:m f e:m f a:m g:sus4 g
   c:/e f:1.3.5.9 c:/g g c:/e f:1.3.5.9 a:m7 g:sus4 g c:/e f:1.3.5.9 c:/g g g g c:/e f:1.3.5.9 c:/g g1
   c2:/e f:1.3.5.9 c:/g g c:/g g2 g1 f d:m
-  a2:m c:/g f:maj7 c:/e f:maj7 c:/e d:m7 c:/bf
+  a2:m c:/g f:6 c:/e f:6 c:/e d:m7 c:/bf  a2:m c:/g f:6 c:/e f:6 c:/e d:m7 c:/bf
+  g:/f c:/e g:/f c:/e g:/f c:/e bf:maj7 a:m7 bf1:maj g2:sus4 g
+
+  c2 e:m f e:m f a:m g:sus4 g c2 e:m f e:m f a:m g:sus4 g f1 d:m
 
 }
   melody = \relative c'{
@@ -143,8 +146,21 @@ chordNames = \chordmode {
   }
   r8 a a g g f f e d2 r2 \bar "||" \break
   r8 e e4 e8 f e c d e16 e~e4 r8 f8 e c d e16 e~ e4 r16 e e8 d c a4 r e'8 f e c
-  r8 e e c e f e c d e16 e~e4 r8 f8 e c d e16 e~ e4 r16 e e8 d c a4 r e'8 f e c
+  r8 e e d e f e c d e16 e~e4 r16 e f8 e c d e16 e~ e4 r16 e e8 d c a4 r e'8 f e c
+  b' a g f g4 r b8 a g f g4 r8 c, b' a g f g4 e8 c d4 d8 e d4 g, f'8 e f e f4 e d2 r \bar ".|:-||" \break
 
+   \repeat volta 3{
+    e8 g4. g8 g b a~a4 r g8 g16 g~g b8. a4 a8 b c c b a a g g e g4 r4
+    e8 g g4 g8 g g b a4 r4 g8 g g b a4 b c8 c b a a g e g~g4 r4 r8 a16 a a8 g f e c d~d2 r2
+    \bar "||"
+    r4 e'8 d8~d4 f,8 e~e4 c'8 c~c b~b4 r4 e8 d8~d4 f,8 e~ \time 2/4 e e g c\time 4/4 c b b a b2 
+    r4 e8 d8~d f, f e~e4 c'8 c~c b~b4 
+  }
+  \alternative{
+    { \time 2/4 b2 }
+    { \time 2/4 b2\repeatTie  \time 4/4 r4 e8 d8~d4 f,8 e~ \time 2/4 e4 c'8 b~ \time 4/4 b2 r2 }
+    { b8\repeatTie  r8 e8 d8~d4 f,8 e~e4 c'8 c~c b a b~b4 c8 c~c b b4~b2 r2  }
+  }
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
@@ -178,16 +194,19 @@ versethree = \lyricmode {
   And all mine are thine, and thine are mine; and I am glo -- ri -- fied in them.
 
   And now I am no more in the world, but these are in the world, and I come to thee. Ho -- ly Fa -- ther, 
-  keep thru thine own name those thou ga -- vest me, that they may be one, as we are.
-  While I was with them in the world, I kept them in thy name: those that thou ga -- vest me I have kept, and 
-  none of them is lost, but the son of per -- di -- tion; that the scrip -- ture might be ful -- filled.
+  keep thru thine own name those thou ga -- vest me, that they may be one, as we.
+  While I was with them in the world, 
+  I kept them in thy name: those that thou hast gave, and none of them is lost, 
+  but the son of per -- di -- tion; 
+  that the scrip -- ture be ful -- filled.
 
-  And now come I to thee; and these things I speak in the world, that they might have my joy ful -- filled 
-  in them -- selves. I have gi -- ven them thy word; and the world hath hat -- ed them, be -- cause they are 
-  not of the world, e -- ven as I am not of the world. I pray not that thou should -- est take them out of
-  the world, but that thou should -- est keep them from the e -- vil. They are not of the world, even as I 
-  am not of the world. Sanc -- ti -- fy them through thy truth: thy word is truth. As thou hast sent me 
-  in -- to the world, e -- ven so have I al -- so sent them into the world. 1And for their sakes I 
+  And now come I to thee; and these things I speak in the world, that they might have my joy ful -- filled. 
+  I have giv'n, gi -- ven them thy word; and the world hath hat -- ed them, be -- cause they're not of the world,
+  e -- ven as I'm not of the world. 
+  
+  I pray not that thou takes them, but that thou should -- est keep them from the e -- vil one. 
+  They're not of the world, as I'm not. Sanc -- ti -- fy them through thy truth: thy word is truth. 
+  As thou hast sent me in -- to the world, e -- ven so have I al -- so sent them into the world. 1And for their sakes I 
   sanc -- ti -- fy my -- self, that they al -- so might be sanc -- ti -- fied through the truth.
 
   Nei -- ther pray I for these a -- lone, but for them al -- so which shall be -- lieve on me through their 
