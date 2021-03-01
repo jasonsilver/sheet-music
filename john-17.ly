@@ -1,5 +1,5 @@
 \language "english"
-\version "2.18.2"
+\version "2.18.1"
 #(define (line-break-every-nth-engraver bars-per-line)
   (lambda (context)
      (make-engraver
@@ -12,11 +12,11 @@
 '())))))))))
 
 \header {
-  title = "John 1:29-34"
+  title = "John 17"
   subtitle = "King James Version"
   composer = "Jason Silver"
   poet = ""
-  copyright = "Silver Ink. 2020"
+  copyright = "Silver Ink. 2021"
   tagline = "Permission granted to share with attribution."
 }
 \paper {
@@ -25,10 +25,10 @@
   right-margin = #12
   left-margin = #12
   indent = #0
- min-systems-per-page = 9 % this allows you to squish line spacing
+ %min-systems-per-page = 9 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 8 ) (minimum-distance . 0) (padding . .09 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . .09 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
@@ -115,90 +115,78 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-  g2 a g:/b a:/cs g:/b a4 d:/fs g2 a
-
-  d2 g:/d d2. a4:/cs b2:m7 g d:/a a d2 g:/d d2. a4:/cs b2:m7 g d:/a a
- 
-  g2 a g:/b a:/cs g:/b a4 d:/fs g2 fs:m7 g2 a g:/b a:/cs g:/b a4 d:/fs g2 a
-
-  e1:m7 d2:/a a
-
-  g4:maj7 b:m7 a fs:m7 g1:maj7 g2:maj7 a4 fs:m7 g2:maj7 fs:m7
-  g4:maj7 b:m7 a fs:m7 g2.:maj7 d4:/fs g2:maj7 a4 fs:m7 g2:maj7 fs:m7 e1:m7 a:7sus4
-
-  e1:m7  g2:/b a e1:m7 g a:sus4
+  c2 e:m f e:m f a:m g:sus4 g c e:m f e:m f a:m
 }
-melody = \relative c'{
-	\set Staff.midiInstrument = #"piano"
-	\time 4/4
-	\key d  \major
-	\clef treble
-	\tempo 4 = 80 \override Score.MetronomeMark.padding = #3
+  melody = \relative c'{
+  \time 4/4
+  \key c  \major
+  \clef treble
+  \tempo 4 = 80 \override Score.MetronomeMark.padding = #3
 
-	\set melismaBusyProperties = #'()
-	%\unset melismaBusyProperties
-	r8 b b cs~cs4 r4 r8 b b d cs4 b8 (a) r8 b16 b b8 cs cs4 d b4. cs8~cs4  r8
-	
-	fs \bar ".|:-||" fs4. g8 g4. fs8 fs2
-	r4. fs8 fs8. e16~e8 fs8 g4. fs8 fs4 e8 d e4 r8 fs
-  fs4. g8 g4. fs8 fs2
-	r4. fs8 fs8. e16~e8 fs8 g4. fs8 fs4 e8 d e4 r4 
-  \bar "||" 
-  r8 b16 b b8 cs cs4 r4 r8 b b d cs4 b8 (a) r8 b16 b b8 cs cs4 d b4. (cs8~cs4) r4
-  r8 b b cs cs4 r4 r8 b b d cs4 b8 (a) r8 b16 b b8 cs cs4 d b4. cs8~cs4  r8 fs
-  \bar ":|."
-  g4. fs8 g4. fs8 fs2 e4 r4
-  \bar ":|."
-  b'4 d cs a b2. r8 a8 | b8 b b d cs b b a b4. a8~a4 r8 a
-  b4 d cs a b2. r8 a8 | b8 b b d cs b b16 a8 fs16 b4. a8~a4  a8 fs
-  b4. a8~a4 fs e2 r4
-  r8 fs8 g d' cs2 e,8 fs g fs g d' cs b cs4 g8 d' cs2 e,8 fs g fs g fs g fs e d e2 r4 r8 fs 
-  \bar ":|."
+  %\set melismaBusyProperties = #'()
+  %\unset melismaBusyProperties
+  \bar ".|:"
+  e8 g4 e8 g g b a~a4 r g8 g16 g~g b8. a4 a8 b c c b a a g g e g4 r4
+  e8 g g4 g8 g g b a4 r8. f16 g8 g g b a4 b c8 c16 c b b a8 a g g16 e8. g4 r4
+  \bar "||"
+  r4 e'8 d8~d4 f,8 e~e4 c'8 c~c b~b4 r4 e8 d8~d4 f,8 e~ \time 2/4 e e g c~ \time 4/4 c b a b~b2 
+  r4 e8 d8~d4 f,8 e~e4 c'8 c~c b4 b8~ \time 2/4 b2 
+  \bar ":|." \time 4/4 r4 e8 d8~d4 f,8 e~ \time 2/4 e4 c'8 b~ \time 4/4 b2 r2 
+  
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
   \set stanza = "1."
-	The next day _ John see -- th Je -- sus _ com -- ing un -- to him, and sa -- ith, _ 
+  Fa -- ther, the ho -- ur is come; glo -- ri -- fy thy Son, that thy Son may al -- so glo -- ri -- fy __ _ thee: 
+  as thou hast giv'n him pow'r o'er flesh, that he should give e -- ter -- nal life to as ma -- ny as thou hast gi -- ven him. 
 
-	Be -- -hold the Lamb of God, 
-	which tak -- eth _ a -- way   the sin of the world.
-  Be -- -hold the Lamb of God, 
-	which tak -- eth _ a -- way  the sin of the world.
-
-  \set stanza = "2."
-	This is he of whom 
-  Of whom I said, __ _ _ 
-  Af -- ter me there comes a man __ _ _
-  which is pre -- ferred 
-  _ be -- fore me: __ _ _  
-  for he was be -- fore __ _ me. __ _ _ Be-
-
-	
+  And this is life e -- ter -- nal, that they might know thee the on -- ly true God,
+   and Je -- sus Christ, whom thou hast sent.
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-  	_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-    _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-	\set stanza = "3."
-  And I knew him not: 
-  but that he should be _
-  made _ ma -- ni -- fest to Is -- ra -- el, 
-  there -- fore I come bap -- tize with wa -- ter. _
-	%And John bare re -- cord, say -- ing, I
-  Saw the Spir -- it des -- cend %ing from hea -- ven 
-  like a dove, 
-  
-  and it a -- bode u -- pon him.
+ 	\set stanza = "2."
+  Thee, have I glor-i -- fied on earth: fin -- ished all the work- all the work which thou __ _ ga -- vest me to do. 
+  Now, Fa -- ther, glo -- ri -- fy thou me with thine own self with glo -- ry which I _ had with thee 
+  be -- fore the world was.
 
-	And I knew him not: 
-  but he that sent me to bap -- tize with wa -- ter, _ 
-  the same said un -- to me, 
-  Up -- on whom thou shalt see the Spi -- rit des -- cen -- ding, _
-  and re -- ain -- ing _ on him, 
-  the same is he which ba -- pti -- zes with the Ho -- ly Ghost.
-	And I saw, and bare re -- cord that this is the Son of God.
-  Be-
+  I have made known thy name to the men which thou ga -- vest me of the world: 
+  they're thine, and thou ga -- vest them me; and they have kept thy word.
+
+  Now they've known that all things what -- so -- ever thou hast gi -- ven me are of thee. 
+  For I have gi -- ven un -- to them the words which thou ga -- vest me; and they have re -- ceived them, 
+  and have known sure -- ly that I came out from thee, and they have be -- lieved that thou didst send me.
+  I pray for them: I pray not for the world, but for them which thou hast gi -- ven me; for they are thine.
+  And all mine are thine, and thine are mine; and I am glo -- ri -- fied in them.
+
+  And now I am no more in the world, but these are in the world, and I come to thee. Ho -- ly Father, keep 
+  through thine own name those whom thou hast gi -- ven me, that they may be one, as we are.
+  While I was with them in the world, I kept them in thy name: those that thou ga -- vest me I have kept, and 
+  none of them is lost, but the son of per -- di -- tion; that the scrip -- ture might be ful -- filled.
+
+  And now come I to thee; and these things I speak in the world, that they might have my joy ful -- filled 
+  in them -- selves. I have gi -- ven them thy word; and the world hath hat -- ed them, be -- cause they are 
+  not of the world, e -- ven as I am not of the world. I pray not that thou should -- est take them out of
+  the world, but that thou should -- est keep them from the e -- vil. They are not of the world, even as I 
+  am not of the world. Sanc -- ti -- fy them through thy truth: thy word is truth. As thou hast sent me 
+  in -- to the world, e -- ven so have I al -- so sent them into the world. 1And for their sakes I 
+  sanc -- ti -- fy my -- self, that they al -- so might be sanc -- ti -- fied through the truth.
+
+  Nei -- ther pray I for these a -- lone, but for them al -- so which shall be -- lieve on me through their 
+  word; that they all may be one; as thou, Fa -- ther, art in me, and I in thee, that they al -- so may be 
+  one in us: that the world may be -- lieve that thou hast sent me. 
+  And the glory which thou ga -- vest me I have gi -- ven them; that they may be one, even as we are one: 
+  I in them, and thou in me, that they may be made per -- fect in one; and that the world may know that 
+  thou hast sent me, and hast loved them, as thou hast loved me.
+
+  Fa -- ther, I will that they al -- so, whom thou hast gi -- ven me, be with me where I am; that they may
+   be -- hold my glo -- ry, which thou hast gi -- ven me: for thou lovedst me be -- fore the 
+   foun -- da -- tion of the world. 
+   
+   O righ -- teous Fa -- ther, the world hath not known thee: but I have known thee, and these have known 
+   that thou hast sent me. And I have de -- clared un -- to them thy name, and will de -- clare it: that 
+   the love where -- with thou hast loved me may be in them, and I in them.
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
@@ -225,7 +213,7 @@ verseeight = \lyricmode {
 }
 \score {
 	<<
-		\new ChordNames  \with {midiInstrument = #"piano"} {
+		\new ChordNames  {
 			\chordNames
 		}
 		\new Staff
