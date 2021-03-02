@@ -115,53 +115,53 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"string ensemble 1"
-  c2 e:m f e:m f a:m g:sus4 g c e:m f e:m f a:m g:sus4 g
-  c:/e f:1.3.5.9 c:/g g c:/e f:1.3.5.9 a:m7 g:sus4 g c:/e f:1.3.5.9 c:/g g g g c:/e f:1.3.5.9 c:/g g1
-  c2:/e f:1.3.5.9 c:/g g c:/g g2 g1 f d:m
-  a2:m c:/g f:6 c:/e f:6 c:/e d:m7 c:/bf  a2:m c:/g f:6 c:/e f:6 c:/e d:m7 c:/bf
-  g:/f c:/e g:/f c:/e g:/f c:/e bf:maj7 a:m7 bf1:maj g2:sus4 g
+  bf2 d:m ef d:m ef g:m f:sus4 f bf d:m ef d:m ef g:m f:sus4 f
+  bf:/d ef:1.3.5.9 bf:/f f bf:/d ef:1.3.5.9 g:m7 f:sus4 f bf:/d ef:1.3.5.9 bf:/f f f f bf:/d ef:1.3.5.9 bf:/f f1
+  bf2:/d ef:1.3.5.9 bf:/f f bf:/f f2 f1 ef c:m
+  g2:m bf:/f ef:6 bf:/d ef:6 bf:/d c:m7 bf:/af  g2:m bf:/f ef:6 bf:/d ef:6 bf:/d c:m7 bf:/af
+  f:/ef bf:/d f:/ef bf:/d f:/ef bf:/d af:maj7 g:m7 af1:maj f2:sus4 f
 
-  c2 e:m f e:m f a:m g:sus4 g c2 e:m f e:m f a:m g:sus4 g f1 d:m
+  bf2 d:m ef d:m ef g:m f:sus4 f bf2 d:m ef d:m ef g:m f:sus4 f ef1 c:m
 
-  c2:/e f:1.3.5.9 c:/g g c:/e f:1.3.5.9 a:m7 g:sus4 g c:/e f:1.3.5.9 c:/g g c:/e f:1.3.5.9 c:/g g:sus4 g1
+  bf2:/d ef:1.3.5.9 bf:/f f bf:/d ef:1.3.5.9 g:m7 f:sus4 f bf:/d ef:1.3.5.9 bf:/f f bf:/d ef:1.3.5.9 bf:/f f:sus4 f1
 
 }
   melody = \relative c'{
   \time 4/4
-  \key c  \major
+  \key bf  \major
   \clef treble
   \tempo 4 = 80 \override Score.MetronomeMark.padding = #3
 
   %\set melismaBusyProperties = #'()
   %\unset melismaBusyProperties
   \repeat volta 3{
-    e8 g4 e8 g g b a~a4 r g8 g16 g~g b8. a4 a8 b c c b a a g g e g4 r4
-    e8 g g4 g8 g g b a4 r8. f16 g8 g g b a4 b c8 c16 c b b a8 a g g16 e8. g4 r4
+    d8 f4 d8 f f a g~g4 r f8 f16 f~f a8. g4 g8 a bf bf a g g f f d f4 r4
+    d8 f f4 f8 f f a g4 r8. ef16 f8 f f a g4 a bf8 bf16 bf a a g8 g f f16 d8. f4 r4
     \bar "||"
-    r4 e'8 d8~d4 f,8 e~e4 c'8 c~c b~b4 r4 e8 d8~d4 f,8 e~ \time 2/4 e e g c~ \time 4/4 c b a b~b2 
-    r4 e8 d8~d4 f,8 e~e4 c'8 c~c b4 b8~ 
+    r4 d'8 c8~c4 ef,8 d~d4 bf'8 bf~bf a~a4 r4 d8 c8~c4 ef,8 d~ \time 2/4 d d f bf~ \time 4/4 bf a g a~a2 
+    r4 d8 c8~c4 ef,8 d~d4 bf'8 bf~bf a4 a8~ 
   }
   \alternative{
-    { \time 2/4 b2 }
-    { \time 2/4 b2\repeatTie  \time 4/4 r4 e8 d8~d4 f,8 e~ \time 2/4 e4 c'8 b~ \time 4/4 b2 r2 }
-    { b8\repeatTie  r8 e8 d8~d4 f,8 e~e4 c'8 c~c b a b~b4 c8 c~c b b4~b2 r2  }
+    { \time 2/4 a2 }
+    { \time 2/4 a2\repeatTie  \time 4/4 r4 d8 c8~c4 ef,8 d~ \time 2/4 d4 bf'8 a~ \time 4/4 a2 r2 }
+    { a8\repeatTie  r8 d8 c8~c4 ef,8 d~d4 bf'8 bf~bf a g a~a4 bf8 bf~bf a a4~a2 r2  }
   }
-  r8 a a g g f f e d2 r2 \bar "||" \break
-  r8 e e4 e8 f e c d e16 e~e4 r8 f8 e c d e16 e~ e4 r16 e e8 d c a4 r e'8 f e c
-  r8 e e d e f e c d e16 e~e4 r16 e f8 e c d e16 e~ e4 r16 e e8 d c a4 r e'8 f e c
-  b' a g f g4 r b8 a g f g4 r8 c, b' a g f g4 e8 c d4 d8 e d4 g, f'8 e f e f4 e d2 r \bar ".|:-||" \break
+  r8 g g f f ef ef d c2 r2 \bar "||" \break
+  r8 d d4 d8 ef d bf c d16 d~d4 r8 ef8 d bf c d16 d~ d4 r16 d d8 c bf g4 r d'8 ef d bf
+  r8 d d c d ef d bf c d16 d~d4 r16 d ef8 d bf c d16 d~ d4 r16 d d8 c bf g4 r d'8 ef d bf
+  a' g f ef f4 r a8 g f ef f4 r8 bf, a' g f ef f4 d8 bf c4 c8 d c4 bf ef8 d ef d ef4 d c2 r \bar ".|:-||" \break
 
    \repeat volta 3{
-    e8 g4 e8 g g b a~a4 r g8 g16 g~g b8. a4 a8 b c c b a a g g e g4 r4
-    e8 g g4 g8 g g b a4 r4 g8 g g b a4 b c8 c b a a g e g~g4 r4 r8 a16 a a8 g f e c d~d2 r2
+    d8 f4 d8 f f a g~g4 r f8 f16 f~f a8. g4 g8 a bf bf a g g f f d f4 r4
+    d8 f f4 f8 f f a g4 r4 f8 f f a g4 a bf8 bf a g g f d f~f4 r4 r8 g16 g g8 f ef d bf c~c2 r2
     \bar "||"
-    r4 e'8 d8~d4 f,8 e~e4 c'8 c~c b~b4 r4 e8 d8~d4 f,8 e~ \time 2/4 e e g c\time 4/4 c b b a b2 
-    r4 e8 d8~d f, f e~e4 c'8 c~c b~b4 
+    r4 d'8 c8~c4 ef,8 d~d4 bf'8 bf~bf a~a4 r4 d8 c8~c4 ef,8 d~ \time 2/4 d d f bf\time 4/4 bf a a g a2 
+    r4 d8 c8~c ef, ef d~d4 bf'8 bf~bf a~a4 
   }
   \alternative{
-    { r4 e8 d~d4 f,8 e~e g c c~c b b a | b2 r2 }
-    { \time 2/4 b2\repeatTie  \time 4/4 r4 e8 d8~d4 f,8 e~ \time 2/4 e4 c'8 b~ \time 4/4 b2 r2 }
-    { b8\repeatTie  r8 e8 d8~d4 f,8 e~e4 c'8 c~c b a b~b4 c8 c~c b b4~b2 r2  }
+    { r4 d8 c~c4 ef,8 d~d f bf bf~bf a a g | a2 r2 }
+    { \time 2/4 a2\repeatTie  \time 4/4 r4 d8 c8~c4 ef,8 d~ \time 2/4 d4 bf'8 a~ \time 4/4 a2 r2 }
+    { a8\repeatTie  r8 d8 c8~c4 ef,8 d~d4 bf'8 bf~bf a g a~a4 bf8 bf~bf a a4~a2 r2  }
   }
 }
 nothing = \lyricmode {}
