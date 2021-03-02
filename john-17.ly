@@ -123,6 +123,8 @@ chordNames = \chordmode {
 
   c2 e:m f e:m f a:m g:sus4 g c2 e:m f e:m f a:m g:sus4 g f1 d:m
 
+  c2:/e f:1.3.5.9 c:/g g c:/e f:1.3.5.9 a:m7 g:sus4 g c:/e f:1.3.5.9 c:/g g c:/e f:1.3.5.9 c:/g g:sus4 g1
+
 }
   melody = \relative c'{
   \time 4/4
@@ -176,8 +178,7 @@ versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
  	\set stanza = "2."
   Thee, have I glor-i -- fied on earth: fin -- ished all the work- all the work which thou __ _ ga -- vest me to do. 
-  Now, Fa -- ther, glo -- ri -- fy thou me with thine own self with glo -- ry which I _ had with thee 
-  be -- fore the world was.
+  Fa -- ther now, glo -- ri -- fy thou me with thine own self with glo -- ry which we _ shared _ be -- fore the world __ _ was.
 
   I have made known thy name to the men which thou ga -- vest me of the world: 
   they're thine, and thou ga -- vest them me; _ and they have kept thy word.
@@ -207,8 +208,6 @@ versethree = \lyricmode {
   
   I pray not that thou takes them, but that thou should -- est keep them from the e -- vil one. 
   They're not of the world, as I'm not. Sanc -- ti -- fy them thru thy truth: thy word is truth. 
-  As thou hast sent me in -- to the world, e -- ven so have I al -- so sent them into the world. 1And for their sakes I 
-  sanc -- ti -- fy my -- self, that they al -- so might be sanc -- ti -- fied through the truth.
 }
 versefour = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
@@ -217,6 +216,9 @@ versefour = \lyricmode {
   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
   \set stanza = "5."
+  As thou sent me to the world,  so have I al -- so- al -- so sent _ them __ _ in -- to __ _ the world. 
+  For them I sanc -- ti -- fy my -- self, that they al -- so might be sanc -- ti -- fied through the truth.
+
   I don't pray for these a -- lone, but for them al -- so which __ _ shall be -- lieve on me __ _ through their
   word; that they __ _ all may __ _ be one; as thou, Fa -- ther, art in me, and I in thee, that they al -- so may be 
   one in us: that the world may be -- lieve that thou hast sent me. 
