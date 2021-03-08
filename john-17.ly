@@ -1,5 +1,5 @@
 \language "english"
-\version "2.18.1"
+\version "2.18.2"
 #(define (line-break-every-nth-engraver bars-per-line)
   (lambda (context)
      (make-engraver
@@ -28,7 +28,7 @@
  %min-systems-per-page = 9 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 0 ) (minimum-distance . 0) (padding . 2 ) (stretchability . 00))
+  system-system-spacing = #'((basic-distance . 0 ) (minimum-distance . 0) (padding . 1 ) (stretchability . 00))
   % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
   score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
   % the distance between a (title or top-level) markup and the system that follows it:
@@ -114,74 +114,96 @@ chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
-	\set Staff.midiInstrument = #"string ensemble 1"
-  bf2 d:m ef d:m ef g:m f:sus4 f bf d:m ef d:m ef g:m f:sus4 f
-  bf:/d ef:1.3.5.9 bf:/f f bf:/d ef:1.3.5.9 g:m7 f:sus4 f bf:/d ef:1.3.5.9 bf:/f f f f bf:/d ef:1.3.5.9 bf:/f f1
-  bf2:/d ef:1.3.5.9 bf:/f f bf:/f f2 f1 ef c:m
-  g2:m bf:/f ef:6 bf:/d ef:6 bf:/d c:m7 bf:/af  g2:m bf:/f ef:6 bf:/d ef:6 bf:/d c:m7 bf:/af
-  f:/ef bf:/d f:/ef bf:/d f:/ef bf:/d af:maj7 g:m7 af1:maj f2:sus4 f
-
-  bf2 d:m ef d:m ef g:m f:sus4 f bf2 d:m ef d:m ef g:m f:sus4 f ef1 c:m
-
-  bf2:/d ef:1.3.5.9 bf:/f f bf:/d ef:1.3.5.9 g:m7 f:sus4 f bf:/d ef:1.3.5.9 bf:/f f bf:/d ef:1.3.5.9 bf:/f f:sus4 f1
-
+	%\set Staff.midiInstrument = #"string ensemble 1"
+  a2 cs:m d cs:m d fs:m e:sus4 e a cs:m d cs:m d fs:m e:sus4 e
+  a:/cs d:1.3.5.9 a:/e e a:/cs d:1.3.5.9 fs:m7 e:sus4 e a:/cs d:1.3.5.9 a:/e e e e a:/cs d:1.3.5.9 a:/e e1
+  a2:/cs d:1.3.5.9 a:/e e a:/e e2 e1 d b:m
+  fs2:m a:/e d:6 a:/cs d:6 a:/cs b:m7 a:/g 
+  fs2:m a:/e d:6 a:/cs d:6 a:/cs b:m7 a:/g  fs2:m a:/e d:6 a:/cs d:6 a:/cs b:m7 a:/g
+  e:/d a:/cs e:/d a:/cs e:/d a:/cs g:maj7 fs:m7 g1:maj e2:sus4 e
+  e2:sus4 e g1:maj7 e2:sus4 e  g1:maj7 b1:m e2:sus4 e 
+  a2 cs:m d cs:m d fs:m e:sus4 e a2 cs:m d cs:m d fs:m e:sus4 e d1 b:m g:maj7 e2:sus4 e
+  a:/cs d:1.3.5.9 a:/e e a:/cs d:1.3.5.9 fs:m7 e:sus4 e a:/cs d:1.3.5.9 a:/e e e cs1:m7 d2:6
+  a2:/e e e b1:m7
+  g1:1.3.5.9 d:/fs g:1.3.5.9 d:/fs
+  a2:/cs d:1.3.5.9 a:/e e a:/cs d a:/e e a:/cs d:1.3.5.9 a:/e e
+	a:/cs d:1.3.5.9 a:/e e a1
+  
 }
   melody = \relative c'{
   \time 4/4
-  \key bf  \major
+  \key a  \major
   \clef treble
   \tempo 4 = 80 \override Score.MetronomeMark.padding = #3
 
   %\set melismaBusyProperties = #'()
   %\unset melismaBusyProperties
   \repeat volta 3{
-    d8 f4 d8 f f a g~g4 r f8 f16 f~f a8. g4 g8 a bf bf a g g f f d f4 r4
-    d8 f f4 f8 f f a g4 r8. ef16 f8 f f a g4 a bf8 bf16 bf a a g8 g f f16 d8. f4 r4
+    cs8 e4 cs8 e e gs fs~fs4 r e8 e16 e~e gs8. fs4 fs8 gs a a gs fs fs e e cs e4 r4
+    cs8 e e4 e8 e e gs fs4 r8. d16 e8 e e gs fs4 gs a8 a16 a gs gs fs8 fs e e16 cs8. b4 r4
     \bar "||"
-    r4 d'8 c8~c4 ef,8 d~d4 bf'8 bf~bf a~a4 r4 d8 c8~c4 ef,8 d~ \time 2/4 d d f bf~ \time 4/4 bf a g a~a2 
-    r4 d8 c8~c4 ef,8 d~d4 bf'8 bf~bf a4 a8~ 
+    r4 cs'8 b8~b4 d,8 cs~cs4 a'8 a~a gs~gs4 r4 cs8 b8~b4 d,8 cs~ \time 2/4 cs cs r e \time 4/4 a gs fs gs~gs2 
+    r4 cs8 b8~b4 d,8 cs~cs4 a'8 a~a gs4 gs8~ 
   }
   \alternative{
-    { \time 2/4 a2 }
-    { \time 2/4 a2\repeatTie  \time 4/4 r4 d8 c8~c4 ef,8 d~ \time 2/4 d4 bf'8 a~ \time 4/4 a2 r2 }
-    { a8\repeatTie  r8 d8 c8~c4 ef,8 d~d4 bf'8 bf~bf a g a~a4 bf8 bf~bf a a4~a2 r2  }
+    { \time 2/4 gs2 }
+    { \time 2/4 gs2\repeatTie  \time 4/4 r4 cs8 b8~b4 d,8 cs~ \time 2/4 cs4 a'8 gs~ \time 4/4 gs2 r2 }
+    { gs8\repeatTie  r8 cs8 b8~b4 d,8 cs~cs4 a'8 a~a gs fs gs~gs4 a8 a~a gs gs4~gs2 r2  }
   }
-  r8 g g f f ef ef d c2 r2 \bar "||" \break
-  r8 d d4 d8 ef d bf c d16 d~d4 r8 ef8 d bf c d16 d~ d4 r16 d d8 c bf g4 r d'8 ef d bf
-  r8 d d c d ef d bf c d16 d~d4 r16 d ef8 d bf c d16 d~ d4 r16 d d8 c bf g4 r d'8 ef d bf
-  a' g f ef f4 r a8 g f ef f4 r8 bf, a' g f ef f4 d8 bf c4 c8 d c4 bf ef8 d ef d ef4 d c2 r \bar ".|:-||" \break
+  r8 fs fs e d cs cs a d2 r2 \bar "||" 
+%  \pageBreak
+  \tiny r8 cs cs4 cs8 d cs a b cs16 cs~cs4 r8 d8 cs a b cs16 cs~ cs4 r16 cs cs8 b a fs4 r cs'8 d cs a \normalsize
+  \bar ".|:-||"
+  \repeat volta 2{
+    r8 cs cs4 cs8 d cs a b cs16 cs~cs4 r8 d8 cs a b cs16 cs~ cs4 r16 cs cs8 b a fs4 r cs'8 d cs a
+    r8 cs cs b cs d cs a b cs16 cs~cs4 r16 cs d8 cs a b cs16 cs~ cs4 r16 cs cs8 b a fs4 r cs'8 d e a,
+    gs' fs e d e4 r gs8 fs e d e4 r8 a, gs' fs e d e4 cs8 a b4 b8 cs b4 a d8 cs d cs d4 cs 
+  }
+  \alternative{
+    { b2 r }
+    {  b2 r d8 cs d cs d4 cs8 a b2 r d8 cs d cs d4 cs b4. a8 a4 fs b2 r }
+  }
+  %\pageBreak
+  \repeat volta 2{
+    cs8 e4 cs8 e e gs fs~fs4 r e8 e16 e~e gs8. fs4 fs8 gs a a gs fs fs e e cs b4 r4
+    cs8 e e8. cs16 e8 e e gs fs4 r4 e8 e e gs fs4 gs a8 a gs fs~fs e4 cs8 b4 r4 r8 fs'16 fs fs8 e d cs a b~b2 r2 
+    r8 fs'16 fs fs8 e d cs a b~b2 r2 
+    \bar "||"
 
-   \repeat volta 3{
-    d8 f4 d8 f f a g~g4 r f8 f16 f~f a8. g4 g8 a bf bf a g g f f d f4 r4
-    d8 f f4 f8 f f a g4 r4 f8 f f a g4 a bf8 bf a g g f d f~f4 r4 r8 g16 g g8 f ef d bf c~c2 r2
-    \bar "||"
-    r4 d'8 c8~c4 ef,8 d~d4 bf'8 bf~bf a~a4 r4 d8 c8~c4 ef,8 d~ \time 2/4 d d f bf\time 4/4 bf a a g a2 
-    r4 d8 c8~c ef, ef d~d4 bf'8 bf~bf a~a4 
+    r4 cs'8 b8~b4 d,8 cs~cs4 a'8 a~a gs~gs4 r4 cs8 b8~b4 d,8 cs~ \time 2/4 cs4 r8 e \time 4/4 a gs fs gs~gs2 
+    r4 cs8 b8~b4 d,8 cs~
   }
   \alternative{
-    { r4 d8 c~c4 ef,8 d~d f bf bf~bf a a g | a2 r2 }
-    { \time 2/4 a2\repeatTie  \time 4/4 r4 d8 c8~c4 ef,8 d~ \time 2/4 d4 bf'8 a~ \time 4/4 a2 r2 }
-    { a8\repeatTie  r8 d8 c8~c4 ef,8 d~d4 bf'8 bf~bf a g a~a4 bf8 bf~bf a a4~a2 r2  }
+    { cs4 a'8 a~a gs4 gs8~  gs4 r8 a8~a gs4 fs8~fs e8~e4 r2 }
+    { cs4\repeatTie a'8 a~a gs4 fs8 \time 2/4 gs fs gs a \time 4/4 d,2 r2  }
   }
+  \bar "||"
+  r8 d d cs d e~e4 r8 d d cs d8. cs16~cs8 b8 | r8 d d cs d e~e4 r8 d d b16 cs d8 cs cs a
+  \bar "||"
+  b4 cs'8 b8~b4 d,8 cs~cs4 a'8 a~a gs~gs4
+  r4 cs8 b8~b4 d,8 cs~cs4 a'8 a~a gs~gs4
+  r4 cs8 cs b4 d,8 d cs4 e8 a~a gs~gs4
+  r4 cs8 b~b4 d,8 cs~cs4 e4 gs a a1
+  \bar "|."
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
-	\override LyricText #'font-size = \LyricFontSize
+  \override LyricText #'font-size = \LyricFontSize
   \set stanza = "1."
   Fa -- ther, the ho -- ur is come; glo -- ri -- fy thy Son, that thy Son may al -- so glo -- ri -- fy __ _ thee: 
   as thou hast giv'n him pow'r o'er flesh, that he should give e -- ter -- nal life to as ma -- ny as thou hast gi -- ven him. 
 
   And this is life e -- ter -- nal, that they might know thee the on -- ly true God,
-   and Je -- sus Christ, whom thou hast sent.
+  and Je -- sus Christ, whom thou hast sent.
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
  	\set stanza = "2."
-  Thee, have I glor-i -- fied on earth: fin -- ished all the work- all the work which thou __ _ ga -- vest me to do. 
+  Thee, have I glor-i -- fied on earth: fin -- ished all the work- all the work which thou hast gi -- ven me to do. 
   Fa -- ther now, glo -- ri -- fy thou me with thine own self with glo -- ry which we _ shared _ be -- fore the world __ _ was.
 
-  I have made known thy name to the men which thou ga -- vest me of the world: 
-  they're thine, and thou ga -- vest them me; _ and they have kept thy word.
+  I have made known thy name to the men thou ga -- vest _ me of the world: 
+  they're thine, and thou ga -- vest them me; (me) and they have kept thy word.
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
@@ -190,52 +212,60 @@ versethree = \lyricmode {
   For I have gi -- ven un -- to them; gi -- ven words which thou ga -- vest me; and they have re -- ceived them, 
   and know, sure -- ly that _ I came out from __ _ thee, and they've be -- lieved thou sent me.
   I pray for them: I pray not for the world, but for them which thou hast giv'n me; 
-  _  _ _ _ _ _ _ _
+  _  _ _ _ _ _ _ (me)
   for they are thine.
   And all mine are thine, and thine are mine; and I am glo -- ri -- fied in them.
-
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
   And now I am no more in the world, but these are in the world, and I come to thee. Ho -- ly Fa -- ther, 
   keep thru thine own name those thou ga -- vest me, that they may be one, as we.
   While I was with them in the world, 
   I kept them in thy name: those that thou hast gave, and none of them is lost, 
   but the son of per -- di -- tion; 
   that the scrip -- ture be ful -- filled.
-  
-  \set stanza = "4."
-  And now __ _ come I to thee; and these things I speak in the world, that they might have my joy ful -- filled. 
-  I have giv'n, gi -- ven them thy word; and the world hath hat -- ed them, be -- cause they're not of the world,
-  e -- ven as I'm not of the world. 
-  
-  I pray not that thou takes them, but that thou should -- est keep them from the e -- vil one. 
-  They're not of the world, as I'm not. Sanc -- ti -- fy them thru thy truth: thy word is truth. 
 }
 versefour = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
   _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-  \set stanza = "5."
-  As thou sent me to the world,  so have I al -- so- al -- so sent _ them __ _ in -- to __ _ the world. 
-  For them I sanc -- ti -- fy my -- self, that they al -- so might be sanc -- ti -- fied through the truth.
-
-  I don't pray for these a -- lone, but for them al -- so which __ _ shall be -- lieve on me __ _ through their
-  word; that they __ _ all may __ _ be one; as thou, Fa -- ther, art in me, and I in thee, that they al -- so may be 
-  one in us: that the world may be -- lieve that thou hast sent me. 
-  And the glory which thou ga -- vest me I have gi -- ven them; that they may be one, even as we are one: 
-  I in them, and thou in me, that they may be made per -- fect in one; and that the world may know that 
-  thou hast sent me, and hast loved them, as thou hast loved me.
-
-  Fa -- ther, I will that they al -- so, whom thou hast gi -- ven me, be with me where I am; that they may
-   be -- hold my glo -- ry, which thou hast gi -- ven me: for thou lovedst me be -- fore the 
-   foun -- da -- tion of the world. 
-   
-   O righ -- teous Fa -- ther, the world hath not known thee: but I have known thee, and these have known 
-   that thou hast sent me. And I have de -- clared un -- to them thy name, and will de -- clare it: that 
-   the love where -- with thou hast loved me may be in them, and I in them.
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+  And now come I to thee; and these things I speak of in the world, that they might have joy, joy ful -- filled __ _ %in them -- selves. 
+  I have _ giv -- en them thy word; and so _ the world hath hat -- ed them, _ be -- cause they're not of the wo -- rld,
+  e -- ven as I'm not, I'm not of the world. 
+  I pray not that thou takes them, but thou should -- est keep them; keep them from the e -- vil _ one. 
+  They're not of the world, as I'm not. Sanc -- ti -- fy them thru thy truth: thy word is truth. 
+  \set stanza = "4."
+  As thou sent me to the world,  so in -- to the world have I al -- _ so __ _ sent __ _ _ _ them.
+  For their sakes I sanc -- ti -- fy my -- self, that they al -- so might be sanc -- ti -- fied __ _ thru the truth.
+  Nei -- ther pray I for these a -- lone, 
+  al -- so for be -- liev -- ers in me; % thru their word;
+  That they be one; as we are, and al -- so may be one __ _ in us:
+  so that the world may be -- lieve that thou hast sent me. 
 }
 versefive = \lyricmode {
-	\override LyricText #'font-size = \LyricFontSize
+  \override LyricText #'font-size = \LyricFontSize
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+  _ _ _ _ _ _ _ _ _ _ _
+  \set stanza = "5."  
+  And the _ glo -- ry thou gave I have gi -- ven them; that they may be one, e -- ven as we are one:
+  
+  I in them, _ and thou __ _ in me, that they __ _ may be made per -- fect- yes- _ in __ _ one; 
+  so the world may know thou sent me, and hast loved them, as thou loves me.
+  
+  Fa -- ther, my will they be with_me; that they may see my glo -- ry, thou gave: for thou loved me 
+  _ _ _ _ _ _ _ _ _ 
+  be -- fore the foun -- da -- tion of the world. 
+  
+  O righ -- teous Fa -- ther, the world hath not known thee:
+  but I have known thee, and these have known that thou hast sent me. 
+
+  And I've de -- clared un -- to them 
+  thy name, and will de -- clare it: 
+  that the love where -- with thou hast loved me may be in them, 
+  and I in them.
  
 }
 versesix = \lyricmode {
@@ -295,5 +325,3 @@ verseeight = \lyricmode {
 	}
 	\midi { }
 }
-
-
