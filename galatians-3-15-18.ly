@@ -25,10 +25,10 @@
 	right-margin = #12
 	left-margin = #12
 	indent = #0
-		%min-systems-per-page = 11 % this allows you to squish line spacing
+		min-systems-per-page = 12 % this allows you to squish line spacing
 
 	% the distance between two systems in the same score:
-	system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . -.59 ) (stretchability . 00))
+	system-system-spacing = #'((basic-distance . 2 ) (minimum-distance . 0) (padding . -.59 ) (stretchability . 00))
 	% the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
 	score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
 	% the distance between a (title or top-level) markup and the system that follows it:
@@ -106,7 +106,15 @@ chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
-        af1 af bf:m7 bf:m7 af af bf:m7 df2:maj7 af:/ef f1:m7 ef	 
+	af1 af bf:m7 bf2:m7  df2:maj7
+	af1 af bf:m7 bf2:m7 af:/c df1:maj7 ef2:sus4 ef bf1:m7 ef2:sus4 ef
+	af1 af bf:m7 bf2:m7  df2:maj7
+	af1 af bf:m7 bf2:m7 af:/c df1:maj7 ef2:sus4 ef bf1:m7 ef2:sus4 ef
+	df1:maj7 df:maj7
+	gf gf f:m7 f:m7 ef:m7 ef:m7 df ef:sus4 df:/f ef:sus4 ef
+
+	af1 af bf:m7 df:maj7 af af bf:m7 df2:maj af:/c bf1:m7 ef:sus4 bf:m7 ef
+	
 }
 melody = \relative c'{
 
@@ -123,8 +131,8 @@ melody = \relative c'{
 	\bar "||"
 	c8 df ef g~g af~af c,~c4 r8 ef g4 af8 af~af df,~df4 r2 r1
 	c8 df ef c g'4 af r4. ef8 g4 af8 af~af df,~df4 r2 r2
-	ef8 df c (af) c4 df4 df4 c4 c8 (bf) af bf~(bf4 c4)
-	df8 ef df4 df c c8 bf8 af af bf4 r4 r4. c8 c df ef af~af2 r2 r1
+	ef8 df c (af) c4 df4 df4 c4 c8 (bf) af bf~(bf c~c4)
+	df8 ef df4 df c c8 bf8 af af bf4 r4 r4. c8 c df ef af~af2 r2 
 	\bar "||"
 
         bf8 af bf c bf4 r4 bf8 af bf c bf af ef ef f f~f4 r8 ef ef c ef f~f4 r4. af8
@@ -135,14 +143,13 @@ melody = \relative c'{
 	af4. g8 ef4. c8 af'4 g ef ef8 c ef f~f2 r4 r4.
 	ef8 ef df c4 c df8 df~df2 r4.
 	ef8 ef df c af c4 df8 df~df c~c bf~bf4 r4
-	c4 af8 f~f4 r4 df'	4 c bf af8 g~g af~af af~af2 r2 r1
-
+	c4 af8 f~f4 r4 df'	4 c bf af g af af2. r4 r1
+	\bar "|."
 
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-	\set stanza = "1."
 
 	Bro -- thers and sis -- ters, let us think in hu -- man terms:
 	E -- ven an a -- gree -- ment made be -- tween two per -- sons is firm.
