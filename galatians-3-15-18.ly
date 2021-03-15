@@ -106,33 +106,36 @@ chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
-	\set Staff.midiInstrument = #"string ensemble 1"
-
+        af1 af bf:m7 bf:m7 af af bf:m7 df2:maj7 af:/ef f1:m7 ef	 
 }
 melody = \relative c'{
 
 	%           \set melismaBusyProperties = #'()
 	\time 4/4
-	\key c  \major
+	\key af  \major
 	\clef treble
 	\tempo 4 = 98
 	\override Score.MetronomeMark.padding = #3
-	e8 f g b~b c~c4 e,8 f g e b'4 c8 f,~f2 r2 r1
-	e8 f g e b'4 c e,8 f8 g e g b c f,~f2 r2 r2
-	g8 f e c | e4 f4 f4 e4 e8 d c d~d4 e4
-	f8 g f4 f e8 c e d d c c d~d4
-  \bar "||"
-  e8 f g b~b c~c e,~e4 r8 g b4 c8 c~c f,~f2 r2 r1
-	e8 f g e b'4 c e,8 f8 g e g b c f,~f2. r4 r2
-	%g8 f e c | e4 f4 f4 e4 e8 d c d~d4 e4
-	%f8 g f4 f e8 c e4 d8 c c d d4
-  
+	c8 df ef g~g af~af4 c,8 df ef c g'4 af8 df,~df2 r2 r1
+	c8 df ef c g'4 af c,8 df8 ef c ef g af df,~df2 r2 r2
+	ef8 df c af | c4 df4 df4 c4 c8 bf af bf~bf4 c4
+	df8 ef df4 df c8 af c bf bf af af bf~bf4
+	\bar "||"
+	c8 df ef g~g af~af c,~c4 r8 ef g4 af8 af~af df,~df4 r2 r1
+	c8 df ef c g'4 af r4. ef8 g4 af8 af~af df,~df4 r2 r2
+	ef8 df c (af) c4 df4 df4 c4 c8 (bf) af bf~(bf4 c4)
+	df8 ef df4 df c c8 bf8 af af bf4 r4 r4. c8 c df ef af~af2 r2 r1
+	\bar "||"
 
-	c4. b8 g4. e8 c'4 b g8 e g4 g8 a8~a2 r4 r1
-	c4. b8 g4. e8 c'4 b g g8 e g a~a2 r4 r4.
-	g8 g f e4 e f8 f~f2 r2
-	g8 g f e c e4 f8 f~f e~e d~d4 r4
-	e4 c8 a~a4 r4 f4 e d c8 b~b c~c c~c2 r2 r1
+        bf8 af bf c bf4 r4 bf8 af bf c bf af ef ef f f~f4 r8 ef ef c ef f~f4 r4. af8
+        bf8 af bf c bf af ef bf'~bf af bf (c) bf af af ef f2 f4 af8 af~af bf~bf4 
+        af8 g ef f~f4. f8 f g af af~af bf bf2. r1
+        \bar "||"
+	af4. g8 ef4. c8 af'4 g ef8 c ef4 ef8 f8~f2 r4 r1
+	af4. g8 ef4. c8 af'4 g ef ef8 c ef f~f2 r4 r4.
+	ef8 ef df c4 c df8 df~df2 r4.
+	ef8 ef df c af c4 df8 df~df c~c bf~bf4 r4
+	c4 af8 f~f4 r4 df'	4 c bf af8 g~g af~af af~af2 r2 r1
 
 
 }
@@ -147,19 +150,20 @@ verseone = \lyricmode {
 	bo -- dy can stop it or add a -- ny -- thing to it.
 
 	God pro -- mised A -- bra -- ham and his des -- cen -- dant. 
-  God did not say, “and to your des -- cen -- dants.”
-	That would mean many peo -- ple. But God said, “and to your
-	de -- scen -- dant.” That means on -- ly one per -- son; that
-	per -- son is Christ.
+  	God did not say, “and to, to your des -- cen -- dants.”
+	That would mean ma -- ny peo -- ple. But God said, 
+	on -- ly one per -- son: “to your de -- scen -- dant.” 
+	That per -- son is Christ.
 
-	17 This is what I mean: God had an a -- gree -- ment with A -- bra -- ham
-	and pro -- mised to keep it. The law, which came four hun -- dred
-	thir -- ty years later, can -- not change that a -- gree -- ment and so
+	This is what I mean: God had an a -- gree -- ment with A -- bra -- ham;
+	pro -- mised to keep it. 
+	The law, which came four hun -- dred and thir -- ty years la -- ter,
+	can -- not change that a -- gree -- ment and so
 	des -- troy God’s pro -- mise to A -- bra -- ham.
 
 
 	If the law could give us A -- bra -- ham’s bles -- sing,
-	then the pro -- mise would not be ne -- ces -- sary.
+	then the pro -- mise would not be ne -- ces -- sa -- ry.
 	But that is not pos -- si -- ble,
 	be -- cause God free -- ly gave his bles -- sings to
 	A -- bra -- ham through the pro -- mise he had made.
