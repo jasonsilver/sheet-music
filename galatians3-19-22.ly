@@ -12,7 +12,7 @@
 '())))))))))
 
 \header {
-	title = "Galatians 3:15-18"
+	title = "Galatians 3:19-22"
 	subtitle = "New Century Version"
 	composer = "Jason Silver"
 	poet = ""
@@ -25,10 +25,10 @@
 	right-margin = #12
 	left-margin = #12
 	indent = #0
-		min-systems-per-page = 12 % this allows you to squish line spacing
+	%min-systems-per-page = 12 % this allows you to squish line spacing
 
 	% the distance between two systems in the same score:
-	system-system-spacing = #'((basic-distance . 2 ) (minimum-distance . 0) (padding . -.59 ) (stretchability . 00))
+	system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . -.8 ) (stretchability . 00))
 	% the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
 	score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
 	% the distance between a (title or top-level) markup and the system that follows it:
@@ -106,80 +106,81 @@ chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
-	af1 af bf:m7 bf2:m7  df2:maj7
-	af1 af bf:m7 bf2:m7 af:/c df1:maj7 ef2:sus4 ef bf1:m7 ef2:sus4 ef
-	af1 af bf:m7 bf2:m7  df2:maj7
-	af1 af bf:m7 bf2:m7 af:/c df1:maj7 ef2:sus4 ef bf1:m7 ef2:sus4 ef
-	df1:maj7 df:maj7
-	gf gf f:m7 f:m7 ef:m7 ef:m7 df ef:sus4 df:/f ef:sus4 ef
+	\skip1 e1 a:1.2.3.5 cs:m7 a:1.2.3.5 e a:1.2.3.5 cs:m7 a:1.2.3.5
+	 e1 a:1.2.3.5 cs:m7 a:1.2.3.5 e a:1.2.3.5 cs:m7 a:1.2.3.5
 
-	af1 af bf:m7 df:maj7 af af bf:m7 df2:maj af:/c bf1:m7 ef:sus4 bf:m7 ef
-	
+	fs1:m7 e:/gs a:1.2.3.5 cs2:m7 b fs1:m7 b2:sus4 b
+	fs1:m7 e:/gs a:1.2.3.5 cs2:m7 b a1 b a:/b
+
+	e1 b fs:m7 a:1.2.3.5 e b fs:m7 a:1.2.3.5
+	e
 }
 melody = \relative c'{
 
 	%           \set melismaBusyProperties = #'()
 	\time 4/4
-	\key af  \major
+	\key e  \major
 	\clef treble
 	\tempo 4 = 98
 	\override Score.MetronomeMark.padding = #3
-	c8 df ef g~g af~af4 c,8 df ef c g'4 af8 df,~df2 r2 r1
-	c8 df ef c g'4 af c,8 df8 ef c ef g af df,~df2 r2 r2
-	ef8 df c af | c4 df4 df4 c4 c8 bf af bf~bf4 c4
-	df8 ef df4 df c8 af c bf bf af af bf~bf4
-	\bar "||"
-	c8 df ef g~g af~af c,~c4 r8 ef g4 af8 af~af df,~df4 r2 r1
-	c8 df ef c g'4 af r4. ef8 g4 af8 af~af df,~df4 r2 r2
-	ef8 df c (af) c4 df4 df4 c4 c8 (bf) af bf~(bf c~c4)
-	df8 ef df4 df c c8 bf8 af af bf4 r4 r4. c8 c df ef af~af2 r2 
-	\bar "||"
-
-        bf8 af bf c bf4 r4 bf8 af bf c bf af ef ef f f~f4 r8 ef ef c ef f~f4 r4. af8
-        bf8 af bf c bf af ef bf'~bf af bf (c) bf af af ef f2 f4 af8 af~af bf~bf4 
-        af8 g ef f~f4. f8 f g af af~af bf bf2. r1
-        \bar "||"
-	af4. g8 ef4. c8 af'4 g ef8 c ef4 ef8 f8~f2 r4 r1
-	af4. g8 ef4. c8 af'4 g ef ef8 c ef f~f2 r4 r4.
-	ef8 ef df c4 c df8 df~df2 r4.
-	ef8 ef df c af c4 df8 df~df c~c bf~bf4 r4
-	c4 af8 f~f4 r4 df'	4 c bf af g af af2. r4 r1
-	\bar "|."
-
+	\skip2. r8 b8
+	\repeat volta 2{
+		b8. e16~e8 fs8 e8. b16~b4 | r2. r8 b | b8. e16~e8 fs8 e8. b16~b4 | r2. r8 b |
+		b8. e16~e8 fs8 e8. b16~b4 | r4. b16 b b8. a16~a8 gs~|gs8. \tiny a16~a8 gs8 \normalsize r2 | r2. r8 b8 | 
+		b8. e16~e8 fs8 e8. b16~b4 | r2 r8 gs gs a | b8. e16~e8 fs8 e8. b16~b4 | r2. r8 b8 |
+		b8. e16~e8 fs8 e8. b16~b8 \tiny cs  | b4 \normalsize r8 b8 b8. a16~a8 gs~| gs2 r2 |  r2 \GotoCoda r4 r8 e'  |
+		\bar "||"
+		fs4 fs4 fs8 e fs gs fs8. e16~e4 r4 fs8 gs | fs8. e16~e4 r4 b8 b | gs'4 gs gs8 fs r8 e
+		fs4 fs fs e8 cs cs b~b4 r4 e8 e fs4 fs fs8 e fs gs fs8. e16~e4 r4 fs8 gs | fs8. e16~e4 r4 b8 b |
+		gs'4 gs gs8. fs16~fs8 e | a4 gs fs e b2 r2 | r2. r8 b
+	}
+	\break
+	
+	 r2 \Coda gs'4 a
+	\bar ".|:-||"
+	b2 gs4. gs8~gs fs~fs4 gs4 a b2 gs4. e8~e4 r4 gs a
+	b4. gs8~gs gs~gs a fs4. e8 gs4 b, cs2 r2 | r2 gs'4 a |
+	\bar ":|."
+	\improvisationOn e1 \improvisationOff \bar "|."
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-
-	Bro -- thers and sis -- ters, let us think in hu -- man terms:
-	E -- ven an a -- gree -- ment made be -- tween two per -- sons is firm.
-	Af -- ter that a -- gree -- ment is ac -- cep -- ted by both, no --
-	bo -- dy can stop it or add a -- ny -- thing to it.
-
-	God pro -- mised A -- bra -- ham and his des -- cen -- dant. 
-  	God did not say, “and to, to your des -- cen -- dants.”
-	That would mean ma -- ny peo -- ple. But God said, 
-	on -- ly one per -- son: “to your de -- scen -- dant.” 
-	That per -- son is Christ.
-
-	This is what I mean: God had an a -- gree -- ment with A -- bra -- ham;
-	pro -- mised to keep it. 
-	The law, which came four hun -- dred and thir -- ty years la -- ter,
-	can -- not change that a -- gree -- ment and so
-	des -- troy God’s pro -- mise to A -- bra -- ham.
-
-
-	If the law could give us A -- bra -- ham’s bles -- sing,
-	then the pro -- mise would not be ne -- ces -- sa -- ry.
-	But that is not pos -- si -- ble,
-	be -- cause God free -- ly gave his bles -- sings to
-	A -- bra -- ham through the pro -- mise he had made.
+	So what was the law for? 
+	'Twas gi -- ven to show that 
+	the wrong things that we do 
+	are a -- gainst God’s will. 
+	_ _ And so it con -- ti -- nued 
+	un -- til the spe -- cial de -- scen -- dant, 
+	Yes, He who'd been pro -- mised; _ _
+	Un -- til He came. 
   
+	The law was gi -- ven through the an -- gels 
+	who used Mo -- ses 
+	for a me -- di -- a -- tor 
+	to give the law to the peo -- ple.
+
+	But a me -- di -- a -- tor is not need -- ed when there's on -- ly 
+	When there's on -- ly one side, 
+	and God is on -- ly one. 
+	Does
+ 
+
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-  \set stanza = "3."
-
+ 	\tiny Does \normalsize this mean the law is- 
+	is a -- gainst God’s pro -- mise? 
+	That would be true on -- ly 
+	if the law made us_right with God.
+	But God did not give law 
+	Did not give law that can bring life. 
+	In -- stead, Scrip -- tures show the whole world is bound by sin. 	
+	_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+	_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+	This was so the pro -- mise would be giv'n through faith
+	to the peo -- ple who be -- lieve in Je -- sus Christ.
+	This was
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
