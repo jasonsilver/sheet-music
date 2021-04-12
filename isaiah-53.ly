@@ -12,8 +12,8 @@
 '())))))))))
 
 \header {
-	title = "Galatians 3:15-18"
-	subtitle = "New Century Version"
+	title = "Isaiah 53"
+	subtitle = ""
 	composer = "Jason Silver"
 	poet = ""
 	copyright = "Silver Ink. 2021"
@@ -25,16 +25,16 @@
 	right-margin = #12
 	left-margin = #12
 	indent = #0
-		min-systems-per-page = 12 % this allows you to squish line spacing
+	%min-systems-per-page = 12 % this allows you to squish line spacing
 
 	% the distance between two systems in the same score:
-	system-system-spacing = #'((basic-distance . 2 ) (minimum-distance . 0) (padding . -.59 ) (stretchability . 00))
+	system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . -.5 ) (stretchability . 00))
 	% the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
 	score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
 	% the distance between a (title or top-level) markup and the system that follows it:
 	markup-system-spacing = #'((basic-distance . 0) (padding . -6) (stretchability . 0))
 	% the distance between the last system of a score and the (title or top-level) markup that follows it:
-	score-markup-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
+	score-markup-spacing = #'((basic-distance . 0) (padding . -4) (stretchability . 0))
 	% the distance between two (title or top-level) markups:
 	markup-markup-spacing = #'((basic-distance . 0) (padding . 0))
 	% the distance from the top of the printable area (i.e. the bottom of the top margin) to the first system on a page, when there is no (title or top-level) markup between the two:
@@ -106,84 +106,127 @@ chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
-	af1 af bf:m7 bf2:m7  df2:maj7
-	af1 af bf:m7 bf2:m7 af:/c df1:maj7 ef2:sus4 ef bf1:m7 ef2:sus4 ef
-	af1 af bf:m7 bf2:m7  df2:maj7
-	af1 af bf:m7 bf2:m7 af:/c df1:maj7 ef2:sus4 ef bf1:m7 ef2:sus4 ef
-	df1:maj7 df:maj7
-	gf gf f:m7 f:m7 ef:m7 ef:m7 df ef:sus4 df:/f ef:sus4 ef
+	\skip1 ef1 f:m7 af:1.2.3.5 bf:/af ef:/g af:1.2.3.5 f:m bf:/d
+	ef1 f:m7 af:1.2.3.5 bf:/af ef:/g af:1.2.3.5 f:m bf2:/d ef:/g af1:1.3.5.9
+	bf2:/d ef:/g af1:1.3.5.9 f2:m ef:/g af1:1.3.5.9 ef:/g f:m f:m
+	f:m
 
-	af1 af bf:m7 df:maj7 af af bf:m7 df2:maj af:/c bf1:m7 ef:sus4 bf:m7 ef
-	
+	ef1 f:m7 af af ef f:m7 af f2:m ef:/g af1 af:1.2.3.5
+
+	df af:/c ef:/bf bf df af:/c ef:/bf bf
+	df af:/c ef:/bf bf df af:/c ef:/bf bf1
+
+	af ef:/g af c:m af ef:/g af c:m f:m
+
 }
 melody = \relative c'{
 
-	%           \set melismaBusyProperties = #'()
+	%\set melismaBusyProperties = #'()
 	\time 4/4
-	\key af  \major
+	\key ef  \major
 	\clef treble
-	\tempo 4 = 98
+	\tempo 4 = 90
 	\override Score.MetronomeMark.padding = #3
-	c8 df ef g~g af~af4 c,8 df ef c g'4 af8 df,~df2 r2 r1
-	c8 df ef c g'4 af c,8 df8 ef c ef g af df,~df2 r2 r2
-	ef8 df c af | c4 df4 df4 c4 c8 bf af bf~bf4 c4
-	df8 ef df4 df c8 af c bf bf af af bf~bf4
-	\bar "||"
-	c8 df ef g~g af~af c,~c4 r8 ef g4 af8 af~af df,~df4 r2 r1
-	c8 df ef c g'4 af r4. ef8 g4 af8 af~af df,~df4 r2 r2
-	ef8 df c (af) c4 df4 df4 c4 c8 (bf) af bf~(bf c~c4)
-	df8 ef df4 df c c8 bf8 af af bf4 r4 r4. c8 c df ef af~af2 r2 
-	\bar "||"
-
-        bf8 af bf c bf4 r4 bf8 af bf c bf af ef ef f f~f4 r8 ef ef c ef f~f4 r4. af8
-        bf8 af bf c bf af ef bf'~bf af bf (c) bf af af ef f2 f4 af8 af~af bf~bf4 
-        af8 g ef f~f4. f8 f g af af~af bf bf2. r1
-        \bar "||"
-	af4. g8 ef4. c8 af'4 g ef8 c ef4 ef8 f8~f2 r4 r1
-	af4. g8 ef4. c8 af'4 g ef ef8 c ef f~f2 r4 r4.
-	ef8 ef df c4 c df8 df~df2 r4.
-	ef8 ef df c af c4 df8 df~df c~c bf~bf4 r4
-	c4 af8 f~f4 r4 df'	4 c bf af g af af2. r4 r1
-	\bar "|."
+	\sectionTitle ""
+	r4. bf8 c ef c af'~ \bar ".|:-||"
+	\repeat volta 2 {
+		af g4 ef8~ef bf4 c8~c4 r8 bf c ef c af'~af g f ef~ef c4 f8~f4
+		r8 bf, c ef c af'~af g4 ef8~ef  c8 ef af~af g4 ef8~ef c4 f8~f2 r2 | r2 c8 ef c af'~|
+		af g4 ef8~ef bf4 c8~c4 r4 c8 ef c af'~af g f ef~ef c4 f8~f4
+		r4 c8 ef c af'~af g4 f8~f ef4 c8 af' g f ef~ef c4 f8~f2 r2 | r2 g8 af bf bf~ \bar "||"
+		\break
+		bf af g f~f ef~ef4 r4. ef8 g af4 bf8~bf af4 g8 g f ef f~f2 g8 af4 bf8~bf4 g8 f~f ef4 ef8
+		bf' af g f~f ef~ef4 | f4 r2. | 
+	}
+	\alternative{
+		{ r2 c8 ef4  af8  }
+		{ f4 r4 \sectionTitle "Chorus" g8 af bf ef~  }
+	}
+	\bar "||" \break
+	ef4 r4 g,8 af bf f'~ | f ef~ef4 g,8 af bf ef~ | ef4 r bf8 af g af~af4 r4 g8 af bf ef~
+	ef4 r4 g,8 af bf f'~ | f ef~ef4 g,8 af bf ef~ | ef8 bf4 bf8 bf af g af~af g af bf af g f ef~
+	ef2. r4 | r1 |
+	\bar "||" \break
+	\sectionTitle "Bridge"
+	af8 g af g af g f8 g af4 af8 bf af4 g8 g~g2 r2 r1 
+	af8 g af g af4 f8 g af af4 bf8 af4 g8 g~g4. g8 g f~f4 f8 ef f g f ef ef4
+	af8 g af g af4 af8 g af af4. af4 g8 g~g2 r2 r1 
+	af8 g af g af4. g8 af af4. af4 g8 g~(g2~g8 f ef f~f4) r4 r8 g f ef
+	c2 c4 bf8 bf~bf4 bf8 bf~bf4 g8 bf c4 c8 c~c4 bf8 bf~bf bf~bf4 r4 g8 bf
+	c4 c8 c~c4 bf8 bf~bf bf~bf4 g bf c c8 c~c c c bf bf4 ef4 r2 r2 g8 af bf ef~
+	\bar ":|."
 
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-
-	Bro -- thers and sis -- ters, let us think in hu -- man terms:
-	E -- ven an a -- gree -- ment made be -- tween two per -- sons is firm.
-	Af -- ter that a -- gree -- ment is ac -- cep -- ted by both, no --
-	bo -- dy can stop it or add a -- ny -- thing to it.
-
-	God pro -- mised A -- bra -- ham and his des -- cen -- dant. 
-  	God did not say, “and to, to your des -- cen -- dants.”
-	That would mean ma -- ny peo -- ple. But God said, 
-	on -- ly one per -- son: “to your de -- scen -- dant.” 
-	That per -- son is Christ.
-
-	This is what I mean: God had an a -- gree -- ment with A -- bra -- ham;
-	pro -- mised to keep it. 
-	The law, which came four hun -- dred and thir -- ty years la -- ter,
-	can -- not change that a -- gree -- ment and so
-	des -- troy God’s pro -- mise to A -- bra -- ham.
-
-
-	If the law could give us A -- bra -- ham’s bles -- sing,
-	then the pro -- mise would not be ne -- ces -- sa -- ry.
-	But that is not pos -- si -- ble,
-	be -- cause God free -- ly gave his bles -- sings to
-	A -- bra -- ham through the pro -- mise he had made.
-  
+	\set stanza = "1."
+	Who would have be -- lieved what we just heard?
+	To whom has the arm of the Lord been shown?
+  	He grew like a ten -- der shoot,
+    like a root out of dry ground.
+	He had no form or ma -- je -- sty
+	To make us take spe -- cial note of him,
+	No -- thing in his ap -- pea -- rance that we should de -- si -- re him.
+ 
+	He was des -- pised and re -- ject -- ed,
+	A man of sor -- rows, ac -- quaint -- ed with grief.
+	peo -- ple hid their fac -- es; and we don't es -- teem him.
+	_
+	Sure -- ly he 
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-  \set stanza = "3."
+	\set stanza = "2."
+	_ (Sure -- ly _ he) has borne our grief
+	and sure -- ly he's car -- ried our suf -- fer -- ing,
+	Yet we saw his suf -- fer -- ing
+    and thought God had strick -- en him.
+	But he was pierced for wrong we did,
+	And he was bruised be -- cause of our sins;
+	He en -- dured pun -- ish -- ment and
+	Be -- cause of his wounds we're healed. 
 
+	We all, like sheep, we have wan -- dered
+	Each of us turned off, to his __ _ own way,
+	The Lord laid on him
+    the in -- i -- qui -- ty of us all.
+	_ _ _ _ 
+	He was op -- pressed, he was af -- flict -- ed,
+	yet he did not o -- pen his mouth: 
+	Brought as a lamb led to the slaught -- er, 
+	or as a sheep for her shear -- ers is dumb, he id not o -- pen his mouth.
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
 	\set stanza = "3."
+	Op -- pres -- sion and judg -- ment was_led  a -- way.
+	And none of his gen -- er -- a -- tion com -- plained
+	Cut off from the land of liv -- ing;
+	for us he took our sin.
+
+	He was as -- signed a sin -- ner's grave,
+    Yet with the rich was his bo -- dy laid,
+	He had done noth -- ing wrong and
+    There was no de -- ceit in him.
+
+	It was the Lord’s will to crush him and cause him suf -- f'ring
+	an off -- 'ring for sin,
+	%he will see his off -- spring and prolong his days,
+    and the will of the Lord will pro -- sper in his hand.
+
+	_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+	He shall see the an -- guish of his soul and be sat -- is -- fied.
+	By his know -- ledge My righ -- teous ser -- vant shall jus -- ti -- fy the ma -- ny,
+    bear -- ing their in -- i -- qui -- ties.
+
+	There -- fore, I'll di -- vide him a por -- tion with the great,
+    and he shall di -- vide the spoi -- l with the strong,
+	be -- cause he poured out his soul to death,
+    and was num -- bered with the sin -- ners,
+	thus he bore the sin of ma -- ny and made in -- ter -- ces -- sion for trans -- gres -- sors.
+
+	He was op -- pres-
 }
 versefour = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
