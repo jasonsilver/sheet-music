@@ -12,7 +12,7 @@
 '())))))))))
 
 \header {
-	title = "Galatians 3:19-22"
+	title = "Galatians 3:23-29"
 	subtitle = "New Century Version"
 	composer = "Jason Silver"
 	poet = ""
@@ -106,81 +106,54 @@ chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
-	\skip1 e1 a:1.2.3.5 cs:m7 a:1.2.3.5 e a:1.2.3.5 cs:m7 a:1.2.3.5
-	 e1 a:1.2.3.5 cs:m7 a:1.2.3.5 e a:1.2.3.5 cs:m7 a:1.2.3.5
 
-	fs1:m7 e:/gs a:1.2.3.5 cs2:m7 b fs1:m7 b2:sus4 b
-	fs1:m7 e:/gs a:1.2.3.5 cs2:m7 b a1 b a:/b
-
-	e1 b fs:m7 a:1.2.3.5 e b fs:m7 a:1.2.3.5
-	e
 }
 melody = \relative c'{
 
 	%           \set melismaBusyProperties = #'()
 	\time 4/4
-	\key e  \major
+	\key c  \major
 	\clef treble
 	\tempo 4 = 98
 	\override Score.MetronomeMark.padding = #3
-	\skip2. r8 b8
+	r2 r8 c c d 
 	\repeat volta 2{
-		b8. e16~e8 fs8 e8. b16~b4 | r2. r8 b | b8. e16~e8 fs8 e8. b16~b4 | r2. r8 b |
-		b8. e16~e8 fs8 e8. b16~b4 | r4. b16 b b8. a16~a8 gs~|gs8. \tiny a16~a8 gs8 \normalsize r2 | r2. r8 b8 | 
-		b8. e16~e8 fs8 e8. b16~b4 | r2 r8 gs gs a | b8. e16~e8 fs8 e8. b16~b4 | r2. r8 b8 |
-		b8. e16~e8 fs8 e8. b16~b8 \tiny cs  | b4 \normalsize r8 b8 b8. a16~a8 gs~| gs2 r2 |  r2 \GotoCoda r4 r8 e'  |
-		\bar "||"
-		fs4 fs4 fs8 e fs gs fs8. e16~e4 r4 fs8 gs | fs8. e16~e4 r4 b8 b | gs'4 gs gs8 fs r8 e
-		fs4 fs fs e8 cs cs b~b4 r4 e8 e fs4 fs fs8 e fs gs fs8. e16~e4 r4 fs8 gs | fs8. e16~e4 r4 b8 b |
-		gs'4 gs gs8. fs16~fs8 e | a4 gs fs e b2 r2 | r2. r8 b
+		e e e d d4 c8 d e e e d d4 e8 c a2 r2 r2 r8 
+		c c d e e e d d4 c8 d e e e d d d e c a2 r2 
+
+		r2. e'8 g a4 a8 g a4 b8 g~g2 r4 e8 g a4 a8 g a4 b8 g~
 	}
-	\break
-	
-	 r2 \Coda gs'4 a
-	\bar ".|:-||"
-	b2 gs4. gs8~gs fs~fs4 gs4 a b2 gs4. e8~e4 r4 gs a
-	b4. gs8~gs gs~gs a fs4. e8 gs4 b, cs2 r2 | r2 gs'4 a |
-	\bar ":|."
-	\improvisationOn e1 \improvisationOff \bar "|."
+	\alternative{
+		{ g4 r4 g4 c,8 d~d2 e4. a,8~a2 r4 c8 d}
+		{ g4\repeatTie r4 g4 c,8 d~d2 e4 c8 a8~ }
+	}
+	a2 g'4 c,8 d~d2 e4 c8 a 
 }
-nothing = \lyricmode {}
-verseone = \lyricmode {
+=verseone = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-	So what was the law for? 
-	'Twas gi -- ven to show that 
-	the wrong things that we do 
-	are a -- gainst God’s will. 
-	_ _ And so it con -- ti -- nued 
-	un -- til the spe -- cial de -- scen -- dant, 
-	Yes, He who'd been pro -- mised; _ _
-	Un -- til He came. 
-  
-	The law was gi -- ven through the an -- gels 
-	who used Mo -- ses 
-	for a me -- di -- a -- tor 
-	to give the law to the peo -- ple.
-
-	But a me -- di -- a -- tor is not need -- ed when there's on -- ly 
-	When there's on -- ly one side, 
-	and God is on -- ly one. 
-	Does
- 
-
+	Be -- fore the com -- ing of this faith, 
+	we were held in cus -- to -- dy 
+	un -- der law, 
+	locked up un -- til the faith that was-
+	'til the faith that was to come 
+	would be re -- vealed. 
+	So the law was our guard -- i -- an un -- til Christ came that we might be jus -- ti -- fied by faith. 
+	Now that
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
- 	\tiny Does \normalsize this mean the law is- 
-	is a -- gainst God’s pro -- mise? 
-	That would be true on -- ly 
-	if the law made us_right with God.
-	But God did not give law 
-	Did not give law that can bring life. 
-	In -- stead, Scrip -- tures show the whole world is bound by sin. 	
-	_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
-	_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
-	This was so the pro -- mise would be giv'n through faith
-	to the peo -- ple who be -- lieve in Je -- sus Christ.
-	This was
+	_ _ _
+	 this __ _ faith has come, we're no long -- er un -- der a guard -- i -- an.
+
+	_ So in Christ __ _ Je -- sus you are all child -- ren __ _ of God __ _ through your faith, 
+
+	for all you __ _ who were bap -- tized in -- to Christ clothed your -- selves with Christ. 
+
+	_ _ _ _ _ _ _ _ There is no long -- er Jew nor Gen -- tile, nei -- ther slave nor free, nor is there male and fe -- male, 
+	for you are all one in Christ Je -- sus. 
+
+	If you be -- long to Christ, then you are A -- bra -- ham’s seed, and heirs acc -- ord -- ing to 
+	the pro -- mise.
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
