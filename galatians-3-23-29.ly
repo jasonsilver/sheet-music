@@ -28,11 +28,11 @@
 	%min-systems-per-page = 12 % this allows you to squish line spacing
 
 	% the distance between two systems in the same score:
-	system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . -.8 ) (stretchability . 00))
+	system-system-spacing = #'((basic-distance . 17 ) (minimum-distance . 0) (padding . -.1 ) (stretchability . 00))
 	% the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
 	score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
 	% the distance between a (title or top-level) markup and the system that follows it:
-	markup-system-spacing = #'((basic-distance . 0) (padding . -6) (stretchability . 0))
+	markup-system-spacing = #'((basic-distance . 0) (padding . -2) (stretchability . 0))
 	% the distance between the last system of a score and the (title or top-level) markup that follows it:
 	score-markup-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
 	% the distance between two (title or top-level) markups:
@@ -106,7 +106,13 @@ chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
+	\skip1 c2 c:1.2.3.5 c c:1.2.3.5 f:maj7 f:6 f:maj7 f:6
+	c c:1.2.3.5 c c:1.2.3.5 f:maj7 f:6 f:maj7 f:6
+	a1:m7 e:m7 a:m7 e:m7 d:m7 f:6
+	% 2nd ending
+	e:m7 d:m7 f d:m7 f2 e:m7 d1:m7 f d:m7 f f:/g g:7
 
+	c1 e:m7 d:m f c e:m7 d:m7 f2:/g g:7
 }
 melody = \relative c'{
 
@@ -121,13 +127,17 @@ melody = \relative c'{
 		e e e d d4 c8 d e e e d d4 e8 c a2 r2 r2 r8 
 		c c d e e e d d4 c8 d e e e d d d e c a2 r2 
 
-		r2. e'8 g a4 a8 g a4 b8 g~g2 r4 e8 g a4 a8 g a4 b8 g~
+		r2. e'8 g a4 a8 g a4 b8 g~g2 r4 e8 g a4 a8 g a4 b8 g~ \break
 	}
 	\alternative{
 		{ g4 r4 g4 c,8 d~d2 e4. a,8~a2 r4 c8 d}
 		{ g4\repeatTie r4 g4 c,8 d~d2 e4 c8 a8~ }
 	}
-	a2 g'4 c,8 d~d2 e4 c8 a 
+	a4 a8 b~b g~g4 | d'4 d8 e~e4 c8 a~a2 g'4 c,8 d~d2 e4 c8 a~ 
+	a4 a8 b~b g~g4 | d'4 d8 e~e4 c8 a~a2 a4 c c4. d8~d4 r r1 \break
+	\bar ".|:-||"
+	c'2 b4 a8 g~g2 a4. d,8~d2 r2 r2. r8 g c4 c c8 b a g~g4 e8 a~a4 e8 d~d4 c8 d~d4 e8 e~e f~f4 r2
+	\bar ":|."
 }
 =verseone = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
@@ -149,7 +159,8 @@ versetwo = \lyricmode {
 
 	for all you __ _ who were bap -- tized in -- to Christ clothed your -- selves with Christ. 
 
-	_ _ _ _ _ _ _ _ There is no long -- er Jew nor Gen -- tile, nei -- ther slave nor free, nor is there male and fe -- male, 
+	_ _ _ _ _ _ _ _ There is no long -- er Jew nor Gen -- tile, nei -- ther slave nor free, 
+	there is no long -- er male and fe -- male, 
 	for you are all one in Christ Je -- sus. 
 
 	If you be -- long to Christ, then you are A -- bra -- ham’s seed, and heirs acc -- ord -- ing to 
