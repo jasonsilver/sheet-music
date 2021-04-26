@@ -25,16 +25,16 @@
 	right-margin = #12
 	left-margin = #12
 	indent = #0
-	%min-systems-per-page = 12 % this allows you to squish line spacing
+	%min-systems-per-page = 10 % this allows you to squish line spacing
 
 	% the distance between two systems in the same score:
-	system-system-spacing = #'((basic-distance . 17 ) (minimum-distance . 0) (padding . -.1 ) (stretchability . 00))
+	system-system-spacing = #'((basic-distance . 12 ) (minimum-distance . 0) (padding . -.1 ) (stretchability . 00))
 	% the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
-	score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
+	score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . -5) (stretchability . 0))
 	% the distance between a (title or top-level) markup and the system that follows it:
-	markup-system-spacing = #'((basic-distance . 0) (padding . -2) (stretchability . 0))
+	markup-system-spacing = #'((basic-distance . 0) (padding . -2.2) (stretchability . 0))
 	% the distance between the last system of a score and the (title or top-level) markup that follows it:
-	score-markup-spacing = #'((basic-distance . 0) (padding . -5) (stretchability . 0))
+	score-markup-spacing = #'((basic-distance . 0) (padding . -10) (stretchability . 0))
 	% the distance between two (title or top-level) markups:
 	markup-markup-spacing = #'((basic-distance . 0) (padding . 0))
 	% the distance from the top of the printable area (i.e. the bottom of the top margin) to the first system on a page, when there is no (title or top-level) markup between the two:
@@ -42,7 +42,7 @@
 	% the distance from the top of the printable area (i.e. the bottom of the top margin) to the first (title or top-level) markup on a page, when there is no system between the two:
 	top-markup-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0))
 	% the distance from the last system or top-level markup on a page to the bottom of the printable area (i.e. the top of the bottom margin):
-	last-bottom-spacing = #'((basic-distance . 0 ) (minimum-distance . 0) (padding . 0) (stretchability . 0))
+	last-bottom-spacing = #'((basic-distance . 0 ) (minimum-distance . 0) (padding . -20) (stretchability . 0))
 
 	paper-width = 21.59\cm
 	paper-height = 27.94\cm
@@ -56,7 +56,7 @@ slashOn = {
 slashOff = {
 	\revert Rest #'stencil
 }
-LyricFontSize = #.5
+LyricFontSize = #.4
 lyricNote = {
 	% use \once \set melismaBusyProperties = #'(tieMelismaBusy) on the tie where the note sits
 	\once \override Lyrics.LyricText.font-shape = #'italic
@@ -106,39 +106,81 @@ chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
-	\skip1 c2 c:1.2.3.5 c c:1.2.3.5 f:maj7 f:6 f:maj7 f:6
-	c c:1.2.3.5 c c:1.2.3.5 f:maj7 f:6 f:maj7 f:6
-	a1:m7 e:m7 a:m7 e:m7 d:m7 f:6
-	% 2nd ending
-	e:m7 d:m7 f d:m7 f2 e:m7 d1:m7 f d:m7 f f:/g g:7
-
-	c1 e:m7 d:m f c e:m7 d:m7 f2:/g g:7
+	\skip1 
+	f4. c4:/e f4. | g:m bf4 bf4.:6 | f4. c4:/e f4. | ef4.:maj7 d8:m7~d2:m7 | 
+	f4. c4:/e f4. | g:m bf4 bf4.:6 | f4. c4:/e f4. | ef4.:maj7 d8:m7~d2:m7 | 
+	f4. c4:/e f4. | g:m bf4 bf4.:6 | f4. c4:/e f4. | ef4.:maj7 d8:m7~d2:m7 | 
+	f4. c4:/e f4. | g:m bf4 bf4.:6 | f4. c4:/e f4. | ef4.:maj7 d8:m7~d2:m7 | 
+	ef1:maj7 g:m7 d:m7 a:m7 ef:maj7 g:m c:sus4 c
+	ef1:maj7 g:m7 d:m7 a:m7 ef:maj7 g:m c:sus4 c2 f:/a  bf1 c:sus24 c 
 }
 melody = \relative c'{
-
 	%           \set melismaBusyProperties = #'()
 	\time 4/4
-	\key c  \major
+	\key f  \major
 	\clef treble
 	\tempo 4 = 98
 	\override Score.MetronomeMark.padding = #3
+	r2. r8 c \bar "||" c f f g f f4 g8 bf a g f f d c c~c4 r2. r2. r8 c 
+	c f f g g f f g bf a g g f4 r r1 r2. 
+	c8 c c f f g g f f g bf a g f f d c c~c4 r2. r2. c8 c
+	c f f g g f f g bf a g f g f~f4 g8 f~f4 r2 r2. r8 a
+	
+	bf8 a bf a bf a g a bf a bf a bf c4 a8~a2 r2 r2. r8 a
+	bf8 a bf a bf a g4 r4 bf8 a g f4 g8~g2 r2 \bar ":|." r2. r8 a
+
+	bf8 a bf a bf a g a bf a bf a bf c4 a8~a2 r2 | r1
+	bf8 a bf a bf a g a | bf a bf a bf a4 g8~g2 r2 | r4 a8 a g4 f d4. d8 f4 d | d c~c2 | r1 \bar "||"
+	\time 2/2
+	r4 a'4 a8 bf a g~g4 r8 g g a g g f2 f4 d d8 d f f f4 d c8 a' a a~a2 | r4. c,8 c4 c c8 a' a a~a2 r1
+	r4 a a8 bf a g~g4. g8 a g~g g g4 f8 f~f4. f8 f d4 d8 f4 d c8 a' a a~a2 r1 | r1 | r1 |
+	r4 a' a8 bf a g~g4. g8 a4 g g8 f~f  
 
 }
 verseone = \lyricmode {
-	Now one of the Pha -- ri -- sees asked Je -- sus to have
-	din -- ner with him, so he went in -- to the Pha -- ri -- see’s
-	house and took his place at the ta -- ble. Then when a wo -- man
-	of that town, who was a sin -- ner, learned that Je -- sus 
-	was di -- ning at the Pha -- ri -- see’s house, she brought an
-	a -- la -- ba -- ster jar of per -- fumed oil. As she stood 
-	be -- hind him at his feet, weep -- ing, she be -- gan to wet
-	his feet with her tears. She wiped them with her hair, kissed
-	them, and a -- nointed them with the per -- fumed oil. 
-	Now when the Pha -- ri-- see who had invited him saw this, he said to himself, “If this man were a prophet, he would know who and what kind of woman this is who is touching him, that she is a sinner.” So Jesus answered him, “Simon, I have something to say to you.” He replied, “Say it, Teacher.” “A certain creditor had two debtors; one owed him 500 silver coins, and the other fifty. When they could not pay, he canceled the debts of both. Now which of them will love him more?” Simon answered, “I suppose the one who had the bigger debt canceled.” Jesus said to him, “You have judged rightly.” Then, turning toward the woman, he said to Simon, “Do you see this woman? I entered your house. You gave me no water for my feet, but she has wet my feet with her tears and wiped them with her hair. You gave me no kiss of greeting, but from the time I entered she has not stopped kissing my feet. You did not anoint my head with oil, but she has anointed my feet with perfumed oil. Therefore I tell you, her sins, which were many, are forgiven, thus she loved much; but the one who is forgiven little loves little.” Then Jesus said to her, “Your sins are forgiven.” But those who were at the table with him began to say among themselves, “Who is this, who even forgives sins?” He said to the woman, “Your faith has saved you; go in peace.”
+	\override LyricText #'font-size = \LyricFontSize
 
+	Now one of the Pha -- ri -- sees asked Je -- sus to have din -- ner with him,
+	so he went in his house and took his place at the ta -- ble.
+	Then a wo -- man of that town, who was a sin -- ner, learned that Je -- sus was there
+	Brought an a -- la -- ba -- ster jar of per -- fumed oil, and stood be -- hind him weep -- ing. 
+	
+	_ She be -- gan to wet his feet with tears then wiped them with her hair,
+	_ Kissed them, and a -- noint -- ed them 
+	With the per -- fumed oil. 
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
+	Now when the Pha -- ri-- see who'd in -- vit -- ed Je -- sus saw this, he thought:
+	“If this man were a pro -- phet, he'd know that she's a sin -- ner.” 
+	_ So Je -- sus an -- swered him, and said, _ “Si -- mon, I have some -- thing to say.” 
+	_ So Si -- mon an -- swered Je -- sus, __ _ _ “Go a -- head and say it, Teach -- er.” 
+
+	“A bank -- er had two debt -- ors, and one owed five hun -- dred sil -- ver coins,
+	The oth -- er owed him fif -- ty, and they both could not pay.
+
+	He can -- celed both their debts, so tell me, which of them will love him more?” 
+	Si -- mon an -- swered, 
+	“I sup -- pose the one who had the big -- ger debt.” 
+	Je -- sus said to him, “You have judged right -- ly.” 
+
+	“I en -- tered your house. You gave me no wa -- ter for my feet, but she has wet 
+		my feet with her tears and wiped my feet with her hair.
+	You gave me no kiss of greet -- ing, but from the time I en -- tered she's not 
+		stopped kis -- sing my feet. 
+	You did not a -- noint my head with oil, but she has a -- nointed my feet with 
+		per -- fumed oil. 
+
+	There -- fore I tell you, her sins, which were ma -- ny, are for -- given, 
+		thus she loved much; 
+	but the one who is for -- gi -- ven lit -- tle loves lit -- tle.” 
+	
+	Then Je -- sus said to her, “Your sins are for -- gi -- ven.” 
+	
+	But those who were at the ta -- ble with him be -- gan to say a -- mong 
+	them -- selves, “Who is this, who even for -- gives sins?”
+
+	He said to the wo -- man, “Your faith has saved you; go in peace.”
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
