@@ -113,6 +113,17 @@ chordNames = \chordmode {
 	f4. c4:/e f4. | g:m bf4 bf4.:6 | f4. c4:/e f4. | ef4.:maj7 d8:m7~d2:m7 | 
 	ef1:maj7 g:m7 d:m7 a:m7 ef:maj7 g:m c:sus4 c
 	ef1:maj7 g:m7 d:m7 a:m7 ef:maj7 g:m c:sus4 c2 f:/a  bf1 c:sus24 c 
+
+	f1 a:m g:m7 ef:maj7 f a:m g:m7 c:11
+	f1 a:m g:m7 ef:maj7 f a:m g:m7 c:11
+	f1 a:m g:m7 ef:maj7 f a:m g:m7 c:11
+
+	bf f:/a g:m f ef:maj7 d:m7 ef:maj7 c:/e  bf f:/a g:m f ef:maj7 d:m7 ef:maj7 c:/e 
+
+	f4. c4:/e f4. | g:m bf4 bf4.:6 | f4. c4:/e f4. | ef4.:maj7 d8:m7~d2:m7 | 
+	f4. c4:/e f4. | g:m bf4 bf4.:6 | f4. c4:/e f4. | ef4.:maj7 d8:m7~d2:m7 | 
+	ef1:maj7 c:/e f1 f1
+
 }
 melody = \relative c'{
 	%           \set melismaBusyProperties = #'()
@@ -133,8 +144,15 @@ melody = \relative c'{
 	bf8 a bf a bf a g a | bf a bf a bf a4 g8~g2 r2 | r4 a8 a g4 f d4. d8 f4 d | d c~c2 | r1 \bar "||"
 	\time 2/2
 	r4 a'4 a8 bf a g~g4 r8 g g a g g f2 f4 d d8 d f f f4 d c8 a' a a~a2 | r4. c,8 c4 c c8 a' a a~a2 r1
-	r4 a a8 bf a g~g4. g8 a g~g g g4 f8 f~f4. f8 f d4 d8 f4 d c8 a' a a~a2 r1 | r1 | r1 |
-	r4 a' a8 bf a g~g4. g8 a4 g g8 f~f  
+	r4 a a8 bf a g~g4. g8 a g4 g8 g4 f8 f~f4. f8 f d4 d8 f4 d c8 a' a a~a2 r1 | r1 | r1 |
+	r4 a a8 bf a g~g4. g8 a4 g g8( f~f4) f2 | r8 f8 f f f d c c~c a' bf a~a2 | r1 | r1 | r1 |
+
+	r4 d c a g f g a~a4 d c a g f g a bf8 a~a2. r4 a g f d1( c4) r2. 
+	r4 d' c a g f g a~a4 d c a g f g a bf8 a~a2. r4 a g f d2. c4 c2 r4 r8 c |
+
+	\bar "||" c f f g f4 r8 g8 bf a16 a g8 f f d c c~c4 r2. r2. r8 c 
+	c f f g g f f4 bf8 a g f g f4 f8~f2 r2 | r2. r8 a
+	bf a bf bf a4. a8 bf a g f g4 f4 f1 | r1 \bar "|."
 
 }
 verseone = \lyricmode {
@@ -168,17 +186,17 @@ versetwo = \lyricmode {
 		my feet with her tears and wiped my feet with her hair.
 	You gave me no kiss of greet -- ing, but from the time I en -- tered she's not 
 		stopped kis -- sing my feet. 
-	You did not a -- noint my head with oil, but she has a -- nointed my feet with 
-		per -- fumed oil. 
+	You did not a -- noint my head with oil, but she has a -- noint -- ed my feet with 
+		per -- fume. 
 
-	There -- fore I tell you, her sins, which were ma -- ny, are for -- given, 
+	There -- fore I tell you, her sins, which were so ma -- ny, are for -- gi -- ven, 
 		thus she loved much; 
-	but the one who is for -- gi -- ven lit -- tle loves lit -- tle.” 
+	but the one who's for -- gi -- ven, for -- gi -- ven lit -- tle loves a lit -- tle.” 
 	
 	Then Je -- sus said to her, “Your sins are for -- gi -- ven.” 
 	
 	But those who were at the ta -- ble with him be -- gan to say a -- mong 
-	them -- selves, “Who is this, who even for -- gives sins?”
+	them -- selves, “Who is this, who for -- gives sins?”
 
 	He said to the wo -- man, “Your faith has saved you; go in peace.”
 }
