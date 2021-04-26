@@ -12,8 +12,8 @@
 '())))))))))
 
 \header {
-	title = "Galatians 3:23-29"
-	subtitle = "New Century Version"
+	title = "Luke 7:36-50"
+	subtitle = "New English Translation"
 	composer = "Jason Silver"
 	poet = ""
 	copyright = "Silver Ink. 2021"
@@ -122,49 +122,23 @@ melody = \relative c'{
 	\clef treble
 	\tempo 4 = 98
 	\override Score.MetronomeMark.padding = #3
-	r2 r8 c c d 
-	\repeat volta 2{
-		e e e d d4 c8 d e e e d d4 e8 c a2 r2 r2 r8 
-		c c d e e e d d4 c8 d e e e d d d e c a2 r2 
 
-		r2. e'8 g a4 a8 g a4 b8 g~g2 r4 e8 g a4 a8 g a4 b8 g~ \break
-	}
-	\alternative{
-		{ g4 r4 g4 c,8 d~d2 e4. a,8~a2 r4 c8 d}
-		{ g4\repeatTie r4 g4 c,8 d~d2 e4 c8 a8~ }
-	}
-	a4 a8 b~b g~g4 | d'4 d8 e~e4 c8 a~a2 g'4 c,8 d~d2 e4 c8 a~ 
-	a4 a8 b~b g~g4 | d'4 d8 e~e4 c8 a~a2 a4 c c4. d8~d4 r r1 \break
-	\bar ".|:-||"
-	c'2 b4 a8 g~g2 a4. d,8~d2 r2 r2. r8 g c4 c c8 b a g~g4 e8 a~a4 e8 d~d4 c8 d~d4 e8 e~e f~f4 r2
-	\bar ":|."
 }
-=verseone = \lyricmode {
-	\override LyricText #'font-size = \LyricFontSize
-	Be -- fore the com -- ing of this faith, 
-	we were held in cus -- to -- dy 
-	un -- der law, 
-	locked up un -- til the faith that was-
-	'til the faith that was to come 
-	would be re -- vealed. 
-	So the law was our guard -- i -- an un -- til Christ came that we might be jus -- ti -- fied by faith. 
-	Now that
+verseone = \lyricmode {
+	Now one of the Pha -- ri -- sees asked Je -- sus to have
+	din -- ner with him, so he went in -- to the Pha -- ri -- see’s
+	house and took his place at the ta -- ble. Then when a wo -- man
+	of that town, who was a sin -- ner, learned that Je -- sus 
+	was di -- ning at the Pha -- ri -- see’s house, she brought an
+	a -- la -- ba -- ster jar of per -- fumed oil. As she stood 
+	be -- hind him at his feet, weep -- ing, she be -- gan to wet
+	his feet with her tears. She wiped them with her hair, kissed
+	them, and a -- nointed them with the per -- fumed oil. 
+	Now when the Pha -- ri-- see who had invited him saw this, he said to himself, “If this man were a prophet, he would know who and what kind of woman this is who is touching him, that she is a sinner.” So Jesus answered him, “Simon, I have something to say to you.” He replied, “Say it, Teacher.” “A certain creditor had two debtors; one owed him 500 silver coins, and the other fifty. When they could not pay, he canceled the debts of both. Now which of them will love him more?” Simon answered, “I suppose the one who had the bigger debt canceled.” Jesus said to him, “You have judged rightly.” Then, turning toward the woman, he said to Simon, “Do you see this woman? I entered your house. You gave me no water for my feet, but she has wet my feet with her tears and wiped them with her hair. You gave me no kiss of greeting, but from the time I entered she has not stopped kissing my feet. You did not anoint my head with oil, but she has anointed my feet with perfumed oil. Therefore I tell you, her sins, which were many, are forgiven, thus she loved much; but the one who is forgiven little loves little.” Then Jesus said to her, “Your sins are forgiven.” But those who were at the table with him began to say among themselves, “Who is this, who even forgives sins?” He said to the woman, “Your faith has saved you; go in peace.”
+
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-	_ _ _
-	 this __ _ faith has come, we're no long -- er un -- der a guard -- i -- an.
-
-	_ So in Christ __ _ Je -- sus you are all child -- ren __ _ of God __ _ through your faith, 
-
-	for all you __ _ who were bap -- tized in -- to Christ clothed your -- selves with Christ. 
-
-	_ _ _ _ _ _ _ _ There is no long -- er Jew nor Gen -- tile, nei -- ther slave nor free, 
-	there is no long -- er male and fe -- male, 
-	for you are all one in Christ Je -- sus. 
-
-	If you be -- long to Christ, then you are A -- bra -- ham’s seed, and heirs acc -- ord -- ing to 
-	the pro -- mise.
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
