@@ -12,11 +12,11 @@
 '())))))))))
 
 \header {
-  title = "Galatians 5:22-26"
-  subtitle = "New Century Version"
+  title = "Romans 12:9-21"
+  subtitle = ""
   composer = "Jason Silver"
   poet = ""
-  copyright = "Silver Ink. 2020"
+  copyright = "Silver Ink. 2021"
   tagline = "Permission granted to share with attribution."
 }
 \paper {
@@ -106,56 +106,52 @@ chExceptions = #(append (sequential-music-to-chord-exceptions chExceptionMusic #
 chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
-	\set Staff.midiInstrument = #"string ensemble 1"
-  e1:m7 a:7sus4
-  b2:m a g d:/fs e:m7 g:/d c1:1.2.3.5
-  e2:m7 fs:m7 g a d1
-  b2:m a g d:/fs e:m7 g:/d c1:1.2.3.5 g:/b
+	%set Staff.midiInstrument = #"string ensemble 1"
+  d:maj7 g:maj7 d:maj7 g:maj7 d:maj7 g:maj7 d:maj7 g:maj7
+  d:maj7 g:maj7 d:maj7 g:maj7 d:maj7 g:maj7 d:maj7 g:maj7
   
-  d1 d g a2:sus4 a d1 d g2  b:m7 a1:7sus4
-  d1 d g a2:7sus4 a:7 d1 d g2 b:m7 a:7sus4 fs:m7 g b:m7 a:7sus4 a:7
 }
 melody = \relative c'{
-  \set Staff.midiInstrument = #"trumpet"
+  %set Staff.midiInstrument = #"trumpet"
   %           \set melismaBusyProperties = #'()
   \time 4/4
 	\key d  \major
 	\clef treble
-	\tempo 4 = 85
+	\tempo 4 = 60
   \override Score.MetronomeMark.padding = #3
-  r4 e8 e e4 e8 d e fs e2. \bar ".|:"
-  d'4. cs8~cs4. b8~b4. a8~a8 fs4 fs8~fs e~e4 r2 r1
-  d'4. cs8~cs4. b8~b4. a8~a4. a8~a1
-  d4 d8 cs8~cs4 cs8 b8~b4 b8 a8~a4 fs8 fs~fs e4 e8~e4 fs8 fs~fs e4 e8~e4 r4
-  r1
+
+  r8 fs8 e d a'8 \tiny a8 \normalsize b8. fs16(~fs4. e8~e4) r r8 fs8 e d a'8. b16~b4 fs8 g16 fs~fs8 g16 e~e4 r
+  r8 fs8 e d a'8 \tiny a8 \normalsize b8. fs16(~fs4. e8~e4) r r8 fs8 e d a'8 fs16 a~a b8. fs8 e16 fs~fs8 g16 e~e4 r4
   \bar "||"
-  r4 fs e d8 e g4 fs8 e e4 fs r4. fs8 e4 d8 e~e2 r2
-  r4 fs e d8 e g4 fs8 (e) e4 fs d2 r2 r1
-  r4 fs8 fs e4 d8 e g4 fs e fs r4 fs8 fs e4 d8 b d4 e r2
-  r4 fs8 fs e4 d8 e g4 fs e fs8 d~d2 d4 b8 d~d e~e4 r2
-  d8 d d4 d b8 d~d e~e4 r2
-  \bar "|."
+  r4 cs'8 cs d4 cs b2 r2 r4 cs8 cs d d cs4 b4~b8 a8~a4 r4
+  r4 cs d cs b2 r4 a16 b cs cs~cs8. a16  a b cs d cs8 a~a4 r8 b b a16 b(~b8. cs16~cs4) 
+  
 }
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
   \set stanza = "1."
-  But the fruit of the Spi -- rit is 
-  love, joy, peace, pat -- ience, kind -- ness, 
-  good -- ness, faith -- ful -- ness,  
-  gen -- tle -- ness, and self -- con -- trol;
-  a -- gainst such things there is no law. 
-
-  Now those who be -- long to Christ Je -- sus have cru -- ci -- fied 
-  the flesh with its pas -- sions and de -- sires.
-
-  If we live by the Spi -- rit, let us al -- so walk by the Spi -- rit.
-   Let us not be -- come boast -- ful, chal -- len -- ging one a -- no -- ther,
-  en -- vy -- ing one a -- no -- ther.
+  Your love must be _ sin -- cere
+  Hate what is e -- vil; cling to what is good
+  A lov -- ing fam -- _ i -- ly
+  Ho -- nour -- ing one a -- no -- ther _ a -- bove your -- selves
+  Do not lack in zeal
+  Keep your spir -- it -- ual fer -- vor
+  serv -- ing the Lord
+  joy -- ful in hope, and pa -- tient in af -- flict -- ion, faith -- ful in prayer
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
   \set stanza = "2."
- 
+  Share with God's peo -- ple in need
+  Share with them, prac -- tice hos -- pi -- tal -- i -- ty
+  Bless those who per -- se -- cute you
+  Bless and don't curse. Re -- joice and mourn with all in kind.
+
+  Live in har -- mo -- ny 
+  Don't be proud, but make friends with
+  With the low -- ly 
+  Do not be wise in your own es -- ti -- ma -- tion
+  Don't be con -- ceit_-_ed
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
