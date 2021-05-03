@@ -28,21 +28,21 @@
  	%min-systems-per-page = 10 % this allows you to squish line spacing
 
   % the distance between two systems in the same score:
-  system-system-spacing = #'((basic-distance . 16 ) (minimum-distance . .10) (padding . 1 ) (stretchability . 00))
-  % the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
-  score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
-  % the distance between a (title or top-level) markup and the system that follows it:
-  markup-system-spacing = #'((basic-distance . 0) (padding . 0) (stretchability . 0))
-  % the distance between the last system of a score and the (title or top-level) markup that follows it:
-  score-markup-spacing = #'((basic-distance . 0) (padding . 0) (stretchability . 0))
-  % the distance between two (title or top-level) markups:
-  markup-markup-spacing = #'((basic-distance . 0) (padding . 0))
-  % the distance from the top of the printable area (i.e. the bottom of the top margin) to the first system on a page, when there is no (title or top-level) markup between the two:
-  top-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0))
-  % the distance from the top of the printable area (i.e. the bottom of the top margin) to the first (title or top-level) markup on a page, when there is no system between the two:
-  top-markup-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0))
-  % the distance from the last system or top-level markup on a page to the bottom of the printable area (i.e. the top of the bottom margin):
-  last-bottom-spacing = #'((basic-distance . 0 ) (minimum-distance . 0) (padding . 0) (stretchability . 0))
+  system-system-spacing = #'((basic-distance . 15 ) (minimum-distance . 0) (padding . 2 ) (stretchability . 00))
+	% the distance between the last system of a score and the first system of the score that follows it, when no (title or top-level) markup exists between them:
+	score-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0) (stretchability . 0))
+	% the distance between a (title or top-level) markup and the system that follows it:
+	markup-system-spacing = #'((basic-distance . 0) (padding . -2) (stretchability . 0))
+	% the distance between the last system of a score and the (title or top-level) markup that follows it:
+	score-markup-spacing = #'((basic-distance . 0) (padding . -4) (stretchability . 0))
+	% the distance between two (title or top-level) markups:
+	markup-markup-spacing = #'((basic-distance . 0) (padding . 0))
+	% the distance from the top of the printable area (i.e. the bottom of the top margin) to the first system on a page, when there is no (title or top-level) markup between the two:
+	top-system-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0))
+	% the distance from the top of the printable area (i.e. the bottom of the top margin) to the first (title or top-level) markup on a page, when there is no system between the two:
+	top-markup-spacing = #'((basic-distance . 0) (minimum-distance . 0) (padding . 0))
+	% the distance from the last system or top-level markup on a page to the bottom of the printable area (i.e. the top of the bottom margin):
+	last-bottom-spacing = #'((basic-distance . 0 ) (minimum-distance . 0) (padding . 0) (stretchability . 0))
 
   paper-width = 21.59\cm
   paper-height = 27.94\cm
@@ -109,7 +109,12 @@ chordNames = \chordmode {
 	%set Staff.midiInstrument = #"string ensemble 1"
   d:maj7 g:maj7 d:maj7 g:maj7 d:maj7 g:maj7 d:maj7 g:maj7
   d:maj7 g:maj7 d:maj7 g:maj7 d:maj7 g:maj7 d:maj7 g:maj7
-  
+  e2:m g:maj7 a:1.4.5.7 a:6 e2:m g:maj7 a:1.4.5.7 a
+  e2:m g:maj7 a:1.4.5.7 a:6 e2:m g:maj7 a:1.4.5.7 a
+  e2:m g:maj7 a:1.4.5.7 a
+  d1 fs:m7 d fs:m d fs:m7 e:m7 a:1.4.5.7 
+
+  d:maj7 g:maj7 d:maj7 g:maj7 d:maj7
 }
 melody = \relative c'{
   %set Staff.midiInstrument = #"trumpet"
@@ -125,7 +130,19 @@ melody = \relative c'{
   \bar "||"
   r4 cs'8 cs d4 cs b2 r2 r4 cs8 cs d d cs4 b4~b8 a8~a4 r4
   r4 cs d cs b2 r4 a16 b cs cs~cs8. a16  a b cs d cs8 a~a4 r8 b b a16 b(~b8. cs16~cs4) 
-  
+  \bar ":|." 
+  r4 e,16 fs g a g8 fs4 g8 fs e~e4 r2
+  r8. d16 e fs g a g8 fs16 fs~fs8 e16 d e8 fs16 e~e8 d16 e~e4 r4
+  r8. d16 e fs g a g8 fs16 fs~fs8 fs16 g fs8 e16 e~e4 r2
+  r4 e16 fs g a g8. fs16~fs fs8 e16~e4 r8 d e fs16 e~e d8 a'16~a2 r2 | r1 |
+  \bar ".|:-||" 
+  r4 d,8 d d e fs g a4 fs e fs r4 d8 d d e fs g a4 fs fs8 e d fs~
+  fs4 r4 fs8 a4 a8~a fs4 e8~e fs8~fs4 g g g8 fs e g~g4 r2. \bar ":|."
+
+  r8 fs8 e d a'4 b8. fs16(~fs4. e8~e4) r 
+  r8 fs8 e d a'8 a b4 fs4. e8~e4 r | r1
+  \bar ":|."
+ 
 }
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
@@ -152,6 +169,20 @@ versetwo = \lyricmode {
   With the low -- ly 
   Do not be wise in your own es -- ti -- ma -- tion
   Don't be con -- ceit_-_ed
+
+  Do not re -- pay e -- vil for e -- vil. 
+  Be care -- ful to do what is right in the eyes of ev -- 'ry -- one. 
+  As far as it is pos -- si -- ble, live at peace with all. 
+  Do not take re -- venge, my dear friends, 
+  For ven -- geance is the Lord's!
+
+  “If your e -- ne -- my is hun -- gry, feed him;
+  If your e -- ne -- my is thir -- sty, give him a drink.
+  Do -- ing this will be like pour -- ing fire on his head.”
+
+  Do not let e -- vil win, 
+  O -- ver -- come e -- vil with good.
+
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
