@@ -12,7 +12,7 @@
 '())))))))))
 
 \header {
-  title = "Galatians 4:1-5"
+  title = "Galatians 4:6-7"
   subtitle = "New Century Version"
   composer = "Jason Silver"
   poet = ""
@@ -107,55 +107,27 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"piano"
-  \skip1 cs1:m e a gs:m cs:m e fs:m7 gs:m cs1:m e a gs:m cs:m e fs:m7 gs:m7 a:1.3.5.9 e fs:m7 d:1.2.3.5
-  a:1.3.5.9 e fs:m b2:/ds r2  
-  e4. a8~a2 cs4.:m b8~b2 e4. a8~a2 cs4.:m b8~b2 e4. a8~a2 cs4.:m b8~b2 e4. a8~a2 cs4.:m b8~b2
 }
 melody = \relative c'{
 	\set Staff.midiInstrument = #"piano"
 	%           \set melismaBusyProperties = #'()
 	\time 4/4
-	\key e  \major
+	\key c  \major
 	\clef treble
 	\tempo 4 = 110
 	%\set melismaBusyProperties = #'()
 	%\unset melismaBusyProperties
-  r8 e e e e8. ds16~ds8 cs8~ \bar "||" cs2 r2 | r8 e e e e8. ds16~ds8 cs8 cs cs cs cs cs8. b16~b8 gs8~gs8 
-  e' e e e8. ds16~ds8 cs8~cs2 r2 | r8 e e e e fs gs a~a2 r2 
-  r8 e e e e8. ds16~ds8 cs8~ \bar "||" cs2 r2 | r8 e e e e8. ds16~ds8 cs8~cs cs cs cs cs cs b8 gs8~gs8 
-  e' e e e8. ds16~ds8 cs8~cs2 r2 | r8 e e e e fs gs a~a a a4 a8. gs16~gs8 fs8~fs2 r8 e e e \bar "||"
-  b'8 b b b b4 r4 b8 a gs fs~fs gs gs b, cs2 r8 e e cs e fs fs4 r4 e8 e
-  b'8. b16~b8 b8~b4 e, b'8 a gs fs~fs gs4 a8~a2 a4 b b2 
-
-
-  r8 cs, e fs \bar "||" gs8. b,16~b8 cs8~cs4 r4 | gs'8 a gs fs~fs4 e8 fs | gs8 a gs fs e e fs gs~gs a gs fs r4 e8 fs
-  gs8. b,16~b8 cs8~cs4 e8 fs | gs8 a gs fs~fs4 e8 fs | gs8 a gs fs(e) e e fs gs a gs a gs fs8~fs4
-	\bar "|."
+  c8 c c b b a
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-    I want to tell you this:
-    While those who will in -- her -- it their fa -- thers’ pro -- per -- ty 
-    while they are chil -- dren still,
-    they are no diff -- 'rent from slaves.
-    It does not mat -- ter if
-    It does not mat -- ter if the chil -- dren own ev -- ery -- thing.
-    While they are chil -- dren, they, 
-    they must o -- bey those are cho -- sen to care for them.
-
-    But when the chil -- dren reach the age set by their fa -- thers, they are free.
-    It is the same for us.
-    We were once like chil -- dren, slaves to the use -- less rules of this world.
-
-    But when the right time came,
-    God sent his Son
-    who was born of a wo -- man and lived un -- der the law.
-    God did this so he
-    could buy free -- dom for those
-    who were un -- der the law
-    and so we could be -- come his chil -- dren.
-
+   Since you are God’s chil -- dr ttttten, 
+   God sent the Spir -- it of his Son in -- to your hearts, 
+   and the Spi -- rit cries out, “Fa -- ther.” 
+   So now you are not a slave; you are God’s child, 
+   and God will give you the bless -- ing he pro -- mised, 
+   be -- cause you are his child.
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
