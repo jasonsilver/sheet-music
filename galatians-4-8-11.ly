@@ -117,20 +117,23 @@ melody = \relative c'{
 	\tempo 4 = 110
 	%\set melismaBusyProperties = #'()
 	%\unset melismaBusyProperties
-
+  c4
 
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
+
   In the past you did not know God. 
   You were slaves to gods that were not real. 
   But now you know the true God. 
   Really, it is God who knows you. 
+
   So why do you turn back to those weak and useless rules you followed before? 
   Do you want to be slaves to those things again? 
   You still follow teachings about special days, months, seasons, and years. 
   I am afraid for you, that my work for you has been wasted.
+
   Brothers and sisters, I became like you, so I beg you to become like me. 
   You were very good to me before. 
   You remember that it was because of an illness that I came to you the first time, preaching the Good News. 
