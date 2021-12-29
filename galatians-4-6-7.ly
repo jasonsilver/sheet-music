@@ -107,6 +107,11 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	\set Staff.midiInstrument = #"piano"
+  c2 e:m a:m f c2 e:m a:m f
+  c2 e:m a:m f c2 e:m a:m f c2 e:m a:m f c2 e:m a:m f 
+  c2 e:m a:m f c2 e:m a:m f c2 e:m a:m f c2 e:m a:m f 
+  c2 e:m a:m f c2 e:m a:m f c2 e:m a:m f c2 e:m a:m f 
+  c2 e:m a:m f c2 e:m f c |
 }
 melody = \relative c'{
 	\set Staff.midiInstrument = #"piano"
@@ -117,17 +122,35 @@ melody = \relative c'{
 	\tempo 4 = 110
 	%\set melismaBusyProperties = #'()
 	%\unset melismaBusyProperties
-  c8 c c b b a
+  \slashOn r4 r r r | r r r r | r r r r | r r r r | \slashOff \bar "||" \break
+  r4 e8 e e4 d8 d~d e~e2 r4 | r8 e e e e d d c | e4. e8 d4 c8 g~| g4 r2. | r4. e'8 d4 c8 g~ | g4 r2. |
+  r4 c8 c c d e f | \bar "||" \break
+   r4 g2. | e4 r8 c8 c d e f | r4 g2 (a4) | e4 r2.  \bar "||" \break
+  r8 e8 e e e4 d8 d~( d e~e2) r4 | 
+  r8 e e e e d d c | e4 r4 d4 c8 c | g4 r2. | r2 d'4 c8 c | g4 r2. |
+  r4. c8 c d e f \bar "||" \break
+  r4 g2.( | e4) r8 c8 c d e f | r4 g2 (a4 | e4) r8 c8 c d e f |
+  r4 g2.( | e4) r8 c8 c d e d~ | d c~c4 r2 | r1 \bar "|."
+
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
-   Since you are God’s chil -- dr ttttten, 
+   Since you are God’s chil -- dren, 
    God sent the Spir -- it of his Son in -- to your hearts, 
+  in -- to your hearts, 
+
    and the Spi -- rit cries out, “Fa -- ther.” 
-   So now you are not a slave; you are God’s child, 
-   and God will give you the bless -- ing he pro -- mised, 
-   be -- cause you are his child.
+   the Spi -- rit cries out, “Fa -- ther.” 
+
+   So now you're not a slave; 
+   You are God’s child, 
+   and God will give you the bless -- ing 
+   Which he pro -- mised, 
+   Be -- cause you are his child
+   Be -- cause you are his child
+   Be -- cause you are his child
+   Be -- cause you are his child.
 }
 versetwo = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
