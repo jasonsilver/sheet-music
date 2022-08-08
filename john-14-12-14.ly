@@ -1,5 +1,5 @@
 \language "english"
-\version "2.18.2"
+%\version "2.18"
 #(define (line-break-every-nth-engraver bars-per-line)
   (lambda (context)
      (make-engraver
@@ -115,34 +115,67 @@ chordNames = \chordmode {
 	\set chordNameExceptions = #chExceptions
 	\set chordChanges = ##t % ##t(true) or ##f(false)
 	%\set Staff.midiInstrument = #"string ensemble 1"
- 
+  \skip1 a1 cs4.:m d8~d2 b1:m  e
+  a cs4.:m d8~d2 b1:m e
+  e d b:m a e
+  e
+  a b:m d e a b:m d e
+  a b:m d e a b:m d e
+  
+
 }
   melody = \relative c'{
   \time 4/4
-  \key d  \major
+  \key a  \major
   \clef treble
   \tempo 4 = 100 \override Score.MetronomeMark.padding = #3
   %\set melismaBusyProperties = #'()
   %\unset melismaBusyProperties
-  
-
-
+  skip2. cs8 e 
+  \repeat volta 3{
+  \bar ".|:" fs fs \tiny cs \normalsize e8~e4 r8 a gs4 cs,8 fs~fs4 r4 | fs8 fs4 fs8 e4 cs8 b~b2 r4 \tiny cs8 \normalsize e8 |
+  fs8 fs cs e~e4 e8 a gs4 cs,8 fs~fs4  r8 e fs fs fs e8~e cs4 b8~
+  }
+  \alternative{
+    { b2 r4 cs8 e  }
+    { b2  r4. cs8 d4 a'8 gs~gs4 r8 d8~d d4 cs8 d (cs) cs4 r1 r2. cs8 e   }
+    { r1  }
+  }
+  \break
+  cs'4 cs cs r d8 cs d cs~cs a4 fs8~fs2 fs4 e e8 (b') b4 r2 
+  cs4 cs cs r d8 cs d cs~cs a4 fs8~fs2 fs4 e cs8 (b) b4 r2 
+  cs'4 cs cs r d8 cs d cs~cs a4 fs8~fs2 fs4 e e8 (b') b4 r2 
+  cs4 cs cs r d8 cs d cs~cs a4 fs8~fs2 fs4 e cs8 (b) b4 r2 
+  \improvisationOn a'1 \improvisationOff
+  \bar "|."
   %\pageBreak
+
 
 }
 nothing = \lyricmode {}
 verseone = \lyricmode {
   \override LyricText #'font-size = \LyricFontSize
-  \set stanza = "1."
-  “Most as -- sur -- ed -- ly, I say to you, he who be -- lieves in Me, 
-  the works that I do he will do al -- so; and grea -- ter works than these he will do, 
-  be -- cause I go to My Fa -- ther. 
-  And what -- ev -- er you ask in My name, that I will do, that the Fa -- ther may be glorified in the Son. 
-  If you ask a -- ny -- thing in My name, I will do it.
+  \set stanza = "1.,2."
+  “Most as -- sur -- ed _ -- ly, I say to you, he who be -- lieves in Me, 
+  _ the works that I do he will al -- so do; and grea -- ter __ _ works than these, %he will do, 
+  Most as-
+  (these,) 
+  be -- cause I go- go to My Fa -- ther.
+  And what- 
+ 
 }
 versetwo = \lyricmode {
     \override LyricText #'font-size = \LyricFontSize
-    \set stanza = "2."
+    _ _
+    \set stanza = "3."
+     -ev -- er you ask, ask in My name, and that __ _  I  will do, that the Fa -- ther may be 
+     _ be glo -- ri -- fied _ glo -- ri -- fied in the Son.
+     _ _ _ _ _ _ _ _ _ _ _ _ _ _  
+    If you ask a -- ny -- thing in My name, I will do it.
+    If you ask a -- ny -- thing in My name, I will do it.
+    If you ask a -- ny -- thing in My name, I will do it.
+    If you ask a -- ny -- thing in My name, I will do it.
+
 }
 versethree = \lyricmode {
 	\override LyricText #'font-size = \LyricFontSize
